@@ -1,0 +1,34 @@
+.login{
+    border-radius: 15px;
+    background-color: #f2f2f2;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+    margin: 10% auto;
+    width: 35%;
+    height: 55%;
+    padding: 10px;
+    text-align: center;
+}
+
+#content{
+    background-color: silver;
+}
+
+button {
+    font: 16px Lato;
+    color: white;
+    background-color: #019c8c;
+    padding: 8px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 15px;
+    width: 50%;
+}
+.login-title{
+    font: 18px Oswald;
+    font-weight: 600;
+    color: #019c8c;
+    padding: 0 10px 10px;
+    text-align: center;
+    margin-bottom: 15px;
+}
