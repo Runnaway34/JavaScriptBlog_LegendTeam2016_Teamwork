@@ -133,22 +133,18 @@ table {
     padding: 0;
 }
 
-
-#wrapper {
-    /*background: url("") no-repeat;*/
-    /*background-size: cover;*/
-    /*width: 100%;*/
-    /*height: auto;*/
-    /*width: 100%;*/
-    /*height: auto;*/
-
+.wrapper {
+    background: url("../images/background (2).jpg") no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: auto;
 }
+
 main {
     margin: 0 auto;
     min-height: inherit;
     width: 80%;
 }
-
 
 .blog-title {
     font: 2.7em 'Delius', cursive;
