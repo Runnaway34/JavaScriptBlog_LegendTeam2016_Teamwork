@@ -132,8 +132,7 @@ table {
     margin: 0;
     padding: 0;
 }
-
-.wrapper {
+body {
     background-image: url("../images/background (2).jpg");
     background-size: cover;
     position: absolute;
@@ -145,6 +144,18 @@ table {
     min-width: 50%;
     min-height: 50%;
 }
+/*.wrapper {*/
+    /*!*background-image: url("../images/background (2).jpg");*!*/
+    /*!*background-size: cover;*!*/
+    /*!*position: absolute;*!*/
+    /*!*top: 0;*!*/
+    /*!*left: 0;*!*/
+    /*!*right: 0;*!*/
+    /*!*bottom: 0;*!*/
+    /*!*margin: auto;*!*/
+    /*!*min-width: 50%;*!*/
+    /*!*min-height: 50%;*!*/
+/*}*/
 
 main {
     margin: 0 auto;
