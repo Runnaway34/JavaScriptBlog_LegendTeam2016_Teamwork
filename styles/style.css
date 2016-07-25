@@ -134,10 +134,16 @@ table {
 }
 
 .wrapper {
-    background: url("../images/background (2).jpg") no-repeat;
+    background-image: url("../images/background (2).jpg");
     background-size: cover;
-    width: 100%;
-    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    min-width: 50%;
+    min-height: 50%;
 }
 
 main {
