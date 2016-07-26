@@ -215,10 +215,6 @@ nav ul ul li {
     height: 75px;
 }
 
-footer {
-    margin: 30px;
-    text-align: center;
-}
 article {
     text-align: left;
     padding: 20px;
@@ -238,6 +234,11 @@ article > h1 {
     padding-right: 20px;
 }
 
-h2 {
+span {
    text-align: left;
+    display: block;
+}
+footer {
+    margin: 30px;
+    text-align: center;
 }
