@@ -132,7 +132,7 @@ table {
     padding: 0;
 }
 body {
-    background-image: url("../images/background (2).jpg");
+    background-image: url("../images/background-try.jpg");
     background-size: cover;
     position: absolute;
     top: 0;
@@ -154,7 +154,7 @@ main {
     font: 2.7em 'Delius', cursive;
     padding-top: 10px;
     font-weight: bold;
-    margin: 40px 40px;
+    margin: 100px 40px 40px;
     color: #565656;
     text-transform: uppercase;
     text-align: center;
@@ -164,11 +164,13 @@ main {
 
 nav {
     padding: 13px;
-    margin-top: auto;
     text-align: center;
     display: block;
     font-size: 1.4em;
-
+    position: fixed;
+    width: 100%;
+    background-color: #f2f2f2;
+    height: 50px;
 }
 
 nav ul {
@@ -178,6 +180,7 @@ nav ul {
     position: relative;
     min-width: 200px;
 }
+
 nav ul li {
     display: inline-block;
 }
@@ -201,18 +204,17 @@ nav ul ul li {
     display: block;
 }
 
-
 #logo {
     padding-left: 15px;
     padding-top: 5px;
-
     display: inline-block;
     float: left;
+    height: 100px;
 }
 
 #icon {
-    width: 75px;
-    height: 75px;
+    width: 50px;
+    height:50px;
 }
 
 article {
@@ -220,7 +222,6 @@ article {
     padding: 20px;
     font-size: 1.1em;
     float: right;
-
 }
 
 article > h1 {
