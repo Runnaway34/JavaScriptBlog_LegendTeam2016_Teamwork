@@ -132,7 +132,7 @@ table {
     padding: 0;
 }
 body {
-    background-image: url("../images/background-try.jpg");
+    background-image: url("../images/background (2).jpg");
     background-size: cover;
     position: absolute;
     top: 0;
@@ -169,7 +169,8 @@ nav {
     font-size: 1.4em;
     position: fixed;
     width: 100%;
-    background-color: #f2f2f2;
+    /*background-color: #f2f2f2;*/
+    background-color:rgba(254,254,254,0.9);
     height: 50px;
 }
 
