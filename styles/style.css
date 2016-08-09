@@ -2,6 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+
 @import url(https://fonts.googleapis.com/css?family=Lato:400,300,700,900);
 @import url(https://fonts.googleapis.com/css?family=Oswald);
 @import url(https://fonts.googleapis.com/css?family=Delius);
@@ -131,6 +132,12 @@ table {
     margin: 0;
     padding: 0;
 }
+
+
+
+
+
+/*NB!!!!!DO NOT CHANGE ANYTHING!!!!!*/
 body {
     background-image: url("../images/background (2).jpg");
     background-size: cover;
@@ -155,7 +162,7 @@ body {
     margin-top: -100px;
     padding: 10px;
     text-align: center;
-    display: block;
+    display: inline-block;
     font-size: 1.4em;
     position: fixed;
     width: 100%;
@@ -185,14 +192,12 @@ nav ul li a {
     padding: 15px;
     text-decoration: none;
 }
+
 nav ul li:hover ul {
     display: inline-block;
 
 }
 
-nav ul ul li {
-    display: block;
-}
 #img {
     float: left;
     margin-right: 20px;
@@ -200,6 +205,7 @@ nav ul ul li {
     padding-bottom: 20px;
     margin-bottom: 20px;
 }
+
 #logo {
     padding-left: 15px;
     padding-top: 10px;
@@ -227,6 +233,7 @@ nav ul ul li {
     width: 100%;
     text-decoration: none;
 }
+
 article {
     text-align: left;
     padding: 20px;
@@ -243,12 +250,21 @@ span {
    text-align: left;
     display: block;
 }
+
 footer {
     margin: 30px;
     text-align: center;
 }
 
+.audio-tag {
+    margin-left: 50px;
+    margin-top: 30px;
+    text-align: center;
+}
 
+hr {
+    border-color: black;
+}
 
 /*Loading Effects*/
 
@@ -361,13 +377,4 @@ footer {
     50% { transform: rotate(360deg); }
     75% { transform: rotate(180deg); }
     100% { transform: rotate(0deg); }
-}
-
-.audio-tag {
-    margin-left: 50px;
-    margin-top: 30px;
-    text-align: center;
-}
-hr {
-    border-color: black;
 }

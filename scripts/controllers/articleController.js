@@ -11,13 +11,13 @@ class ArticleController {
     }
     
     createArticle(requestData) {
-        if (tequestData.title.length < 10) {
-            showPopup('error', "Article title must consist of atleast 10 symbols.");
+        if (requestData.title.length < 10) {
+            showPopup('error', "Article title must consist of at least 10 symbols.");
             return;
         }
         
         if (requestData.content.length < 50) {
-            showPopup('error', "Article content must consist of atleast 50 symbols.");
+            showPopup('error', "Article content must consist of at least 50 symbols.");
             return;
         }
         
