@@ -362,3 +362,12 @@ footer {
     75% { transform: rotate(180deg); }
     100% { transform: rotate(0deg); }
 }
+
+.audio-tag {
+    margin-left: 50px;
+    margin-top: 30px;
+    text-align: center;
+}
+hr {
+    border-color: black;
+}
