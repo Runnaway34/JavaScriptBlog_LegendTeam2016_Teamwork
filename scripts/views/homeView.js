@@ -2,6 +2,7 @@ class HomeView {
     constructor(mainContentSelector) {
         this._selector = mainContentSelector;
     }
+    
     showGuestPage(mainData) {
         let _that = this;
             $.get('templates/welcome-guest.html', function (template) {
@@ -16,9 +17,7 @@ class HomeView {
             });
         });
     }
-
-
-
+   
     showUserPage(mainData) {
         let _that = this;
         $.get('templates/welcome-user.html', function (template) {

@@ -24,7 +24,7 @@ class UserController {
                 sessionStorage['username'] = data.username;
                 sessionStorage['fullname'] = data.fullname;
 
-                redirectUrl("#/");
+                redirectUrl("#/home");
             },
             function error(data) {
                 showPopup('error', "An error has occurred while attempting to login.");
@@ -67,6 +67,6 @@ class UserController {
 
     logout() {
         sessionStorage.clear();
-        redirectUrl("#/");
+        redirectUrl("#/home");
     }
 }

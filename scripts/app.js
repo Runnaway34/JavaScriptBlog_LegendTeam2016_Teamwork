@@ -1,8 +1,8 @@
 $(function () {
     let baseUrl = "https://baas.kinvey.com";
-    let appKey = "kid_HkUWjv0u";
-    let appSecret = "bfeaef3d1d6a4361885d0db6ffa9bbad";
-    var _guestCredentials = "603ccc72-ac11-405a-ba7d-958a07cb47b7.7Z/IKmJNLO3XoXjPeL9jRB6pSDCQWOTvTnSiFlOjavE=";
+    let appKey = "kid_ryNU2M9d";
+    let appSecret = "9a10f2ce7f3b476e85e647ba672d5bb2";
+    var _guestCredentials = "1498ac7a-e6e5-45fb-92e0-7397637796f1.FhAjNPMvLND61KtIQilimGUKD1nwJzgLICdFnkNCIZ0=";
 
 
     let selector = ".main-content";
@@ -38,7 +38,7 @@ $(function () {
 
     initEventServices();
     
-    onRoute("#/", function () {
+    onRoute("#/home", function () {
         if(!authService.isLoggedIn()) {
             homeController.showGuestPage();
         }
@@ -47,24 +47,32 @@ $(function () {
         }
     });
 
-    // onRoute("#/post-:id", function () {
-    //     // Create a redirect to one of the recent posts...
-    //     let top = $("#post-" + this.params['id']).position().top;
-    //     $(window).scrollTop(top);
-    // });
+    onRoute("#/about", function () {
+        homeView.showAboutPage;
+    });
+    
+    onRoute("#/register", function () {
+        userController.showRegisterPage(authService.isLoggedIn())
+    });
 
     onRoute("#/login", function () {
         userController.showLoginPage(authService.isLoggedIn());
     });
 
-    onRoute("#/register", function () {
-        userController.showRegisterPage(authService.isLoggedIn())
-    });
-
     onRoute("#/logout", function () {
-        // Logout the current user...
         userController.logout();
     });
+    
+    
+    
+    
+    
+    
+    // onRoute("#/post-:id", function () {
+    //     // Create a redirect to one of the recent posts...
+    //     let top = $("#post-" + this.params['id']).position().top;
+    //     $(window).scrollTop(top);
+    // });
 
     // onRoute('#/posts/create', function () {
     //     // Show the new post page...
@@ -89,7 +97,7 @@ $(function () {
     //     postController.createPost(data)
     // });
 
-    run('#/');
+    run('#/home');
 
     
 

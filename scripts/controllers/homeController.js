@@ -9,7 +9,7 @@ class HomeController {
     showGuestPage() {
         let _that = this;
         let recentPosts = [];
-        let requestUrl = this._baseServiceUrl + "/appdata/" + this._appKey + "/superHuman";
+        let requestUrl = this._baseServiceUrl + "/appdata/" + this._appKey + "/articles";
         this._requester.get(requestUrl,
             function success(data) {
                 let currentId = 1;
@@ -33,7 +33,7 @@ class HomeController {
     }
     showUserPage() {
         let _that = this;
-        let requestUrl = this._baseServiceUrl + "/appdata/" + this._appKey + "/superHuman";
+        let requestUrl = this._baseServiceUrl + "/appdata/" + this._appKey + "/articles";
 
         this._requester.get(requestUrl,
             function success(data) {
@@ -47,8 +47,6 @@ class HomeController {
             function error(data) {
                 showPopup('error', "Error loading posts!");
             }
-            
-
         );
     }
 }
