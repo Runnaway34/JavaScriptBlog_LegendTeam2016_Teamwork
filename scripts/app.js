@@ -1,8 +1,8 @@
 $(function () {
     let baseUrl = "https://baas.kinvey.com";
-    let appKey = "kid_HkUWjv0u";
-    let appSecret = "bfeaef3d1d6a4361885d0db6ffa9bbad";
-    var _guestCredentials = "603ccc72-ac11-405a-ba7d-958a07cb47b7.7Z/IKmJNLO3XoXjPeL9jRB6pSDCQWOTvTnSiFlOjavE=";
+    let appKey = "kid_ryNU2M9d";
+    let appSecret = "9a10f2ce7f3b476e85e647ba672d5bb2";
+    var _guestCredentials = "1498ac7a-e6e5-45fb-92e0-7397637796f1.FhAjNPMvLND61KtIQilimGUKD1nwJzgLICdFnkNCIZ0=";
 
 
     let selector = ".main-content";
