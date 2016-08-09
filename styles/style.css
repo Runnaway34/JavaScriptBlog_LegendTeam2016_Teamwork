@@ -1,0 +1,364 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700,900);
+@import url(https://fonts.googleapis.com/css?family=Oswald);
+@import url(https://fonts.googleapis.com/css?family=Delius);
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+    display: block;
+}
+
+ol,ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-image: url("../images/background (2).jpg");
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    min-width: 50%;
+    min-height: 50%;
+}
+
+/*Navigation Css*/
+.main-content {
+    margin: 0 auto;
+    min-height: inherit;
+    width: 60%;
+}
+
+#mainNav {
+    margin-top: -100px;
+    padding: 10px;
+    text-align: center;
+    display: block;
+    font-size: 1.4em;
+    position: fixed;
+    width: 100%;
+    background-color:rgba(254,254,254,0.9);
+    height: 60px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    min-width: 200px;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li:hover {
+    background-color: rgb(134, 225, 217);
+}
+
+nav ul li a {
+    color: black;
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+}
+nav ul li:hover ul {
+    display: inline-block;
+
+}
+
+nav ul ul li {
+    display: block;
+}
+#img {
+    float: left;
+    margin-right: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+#logo {
+    padding-left: 15px;
+    padding-top: 10px;
+    display: inline-block;
+    float: left;
+}
+
+#icon {
+    width: 40px;
+    height:40px;
+    display: inline-block;
+
+}
+
+/*Articles*/
+
+.blog-title {
+    font: 2.7em 'Delius', cursive;
+    padding-top: 10px;
+    font-weight: bold;
+    margin: 100px 40px 40px;
+    color: #565656;
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+    text-decoration: none;
+}
+article {
+    text-align: left;
+    padding: 20px;
+    font-size: 1.1em;
+    float: right;
+}
+
+article > h1 {
+    text-align: center;
+    font-size: 1.5em;
+}
+
+span {
+   text-align: left;
+    display: block;
+}
+footer {
+    margin: 30px;
+    text-align: center;
+}
+
+
+
+/*Loading Effects*/
+
+/*TODO*/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: #FFFFFF;
+}
+
+#loader {
+    position: fixed;
+    top: 35%;
+    left: 45%;
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #06C0AB;
+    border-bottom: 16px solid #06C0AB;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: first-spin 4s linear infinite;
+    animation: first-spin 4s linear infinite;
+}
+
+#loader-2 {
+    border: 10px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 10px solid #06C0AB;
+    border-bottom: 10px solid #06C0AB;
+    width: 100px;
+    height: 100px;
+    -webkit-animation: second-spin 4s linear infinite;
+    animation: second-spin 4s linear infinite;
+}
+
+#loader-3 {
+    border: 10px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 10px solid #06C0AB;
+    border-bottom: 10px solid #06C0AB;
+    width: 80px;
+    height: 80px;
+    -webkit-animation: second-spin 4s linear infinite;
+    animation: second-spin 4s linear infinite;
+}
+
+#loader-4 {
+    border: 10px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 10px solid #06C0AB;
+    border-bottom: 10px solid #06C0AB;
+    width: 60px;
+    height: 60px;
+    -webkit-animation: second-spin 4s linear infinite;
+    animation: second-spin 4s linear infinite;
+}
+
+#loader-5 {
+    border: 10px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 10px solid #06C0AB;
+    border-bottom: 10px solid #06C0AB;
+    width: 40px;
+    height: 40px;
+    -webkit-animation: second-spin 4s linear infinite;
+    animation: second-spin 4s linear infinite;
+}
+
+@-webkit-keyframes first-spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@-moz-keyframes first-spin {
+    0% { -moz-transform: rotate(0deg); }
+    100% { -moz-transform: rotate(360deg); }
+}
+
+@keyframes first-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@-webkit-keyframes second-spin {
+    0% { -webkit-transform: rotate(0deg); }
+    25% { -webkit-transform: rotate(180deg); }
+    50% { -webkit-transform: rotate(360deg); }
+    75% { -webkit-transform: rotate(180deg); }
+    100% { -webkit-transform: rotate(0deg); }
+}
+
+@-moz-keyframes second-spin {
+    0% { -moz-transform: rotate(0deg); }
+    25% { -moz-transform: rotate(180deg); }
+    50% { -moz-transform: rotate(360deg); }
+    75% { -moz-transform: rotate(180deg); }
+    100% { -moz-transform: rotate(0deg); }
+}
+
+@keyframes second-spin {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(180deg); }
+    50% { transform: rotate(360deg); }
+    75% { transform: rotate(180deg); }
+    100% { transform: rotate(0deg); }
+}
