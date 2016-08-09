@@ -266,6 +266,35 @@ hr {
     border-color: black;
 }
 
+.article-title {
+    font-size: 30px;
+}
+.subtitle {
+    padding-top: 10px;
+    padding-bottom: 10px;
+ 
+    font-size: 16px;
+}
+.article-content {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*Loading Effects*/
 
 /*TODO*/

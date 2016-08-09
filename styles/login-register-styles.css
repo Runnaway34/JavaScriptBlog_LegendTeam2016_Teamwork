@@ -1,0 +1,66 @@
+/*NB!!!!!DO NOT CHANGE ANYTHING!!!!!*/
+.main-nav {
+    text-align: center;
+    margin-top: auto;
+    display: block;
+    font-size: 1.4em;
+    padding: 10px;
+    width: 100%;
+    background-color:rgba(254,254,254,0.9);
+    height: 60px;
+}
+.register{
+    border-radius: 10px;
+    background-color: #f2f2f2;
+    box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.7);
+    margin: 10% auto;
+    width: 40%;
+    height: auto;
+    padding: 10px;
+    text-align: center;
+}
+.login{
+    border-radius: 10px;
+    background-color: #f2f2f2;
+    box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.7);
+    margin: 10% auto;
+    width: 40%;
+    height: auto;
+    padding: 10px;
+    text-align: center;
+
+}
+.title{
+    font: 55px Oswald;
+    font-weight: 600;
+    color: black;
+    padding: 0 10px 10px;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+#content{
+    background-color: silver;
+}
+#register-request-button {
+    font: 15px Lato;
+    color: white;
+    background-color: black;
+    padding: 8px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 15px;
+    width: 70px;
+}
+#login-request-button {
+    font: 15px Lato;
+    color: white;
+    background-color: black;
+    padding: 8px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 15px;
+    width: 70px;
+}
