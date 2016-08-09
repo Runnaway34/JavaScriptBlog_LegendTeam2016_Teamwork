@@ -3,18 +3,18 @@ class ArticleView {
         this._mainContentSelector = mainContentSelector;
     }
 
-    showCreatePostPage(data, isLoggedIn) {
+    showCreateArticlePage(data, isLoggedIn) {
         let _that = this;
         let templateUrl;
-        if(isLoggedIn){
-            templateUrl = "templates/form-user.html";
-        }
-        else{
-            templateUrl = "templates/form-guest.html";
-        }
-        $.get(templateUrl, function (template) {
-            let renderedWrapper = Mustache.render(template, null);
-            $(_that_wrapperSelector).html(renderedWrapper);
+        // if(isLoggedIn){
+        //     templateUrl = "templates/form-user.html";
+        // }
+        // else{
+        //     templateUrl = "templates/form-guest.html";
+        // }
+        // $.get(templateUrl, function (template) {
+            // let renderedNewArticle = Mustache.render(template, null);
+            // $(_that._mainContentSelector).html(renderedNewArticle);
 
             $.get('templates/create-article.html', function (template) {
                 var renderedContent = Mustache.render(template, null);
@@ -27,7 +27,7 @@ class ArticleView {
                     let author = $('#author').val();
                     let content = $('#content').val();
                     let date = moment().format("MMMM Do YYYY");
-
+                    alert("Ura");
                     let data = {
                         title:title,
                         author:author,
@@ -35,9 +35,10 @@ class ArticleView {
                         date:date
                     };
 
-                    triggerEvent('createPost', data);
+                    triggerEvent('createArticle', data);
                 })
             });
-        });
+
+        // });
     }
 }

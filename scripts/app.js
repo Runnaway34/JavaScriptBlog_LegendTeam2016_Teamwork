@@ -19,9 +19,9 @@ $(function () {
     let userView = new UserView(selector,mainContentSelector);
     let userController = new UserController(userView,requester,baseUrl,appKey);
 
-    let articleView = new ArticleView(selector,mainContentSelector);
-    let articleController = new ArticleController(selector,mainContentSelector);
-
+    let articleView = new ArticleView(mainContentSelector);
+    let articleController = new ArticleController(articleView, requester, baseUrl, appKey);
+    
 
     // Do not change this!--->
    // ->  This is for HomePage!
