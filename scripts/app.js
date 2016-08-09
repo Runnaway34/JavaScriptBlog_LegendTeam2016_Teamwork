@@ -19,9 +19,9 @@ $(function () {
     let userView = new UserView(selector,mainContentSelector);
     let userController = new UserController(userView,requester,baseUrl,appKey);
 
-    // let articleView = new ArticleView(selector,mainContentSelector);
-    // let articleController = new ArticleController(selector,mainContentSelector);
-
+    let articleView = new ArticleView(mainContentSelector);
+    let articleController = new ArticleController(articleView, requester, baseUrl, appKey);
+    
 
     // Do not change this!--->
    // ->  This is for HomePage!
@@ -74,14 +74,14 @@ $(function () {
     //     $(window).scrollTop(top);
     // });
 
-    // onRoute('#/posts/create', function () {
-    //     // Show the new post page...
-    //     let data = {
-    //         fullname:sessionStorage['fullname']
-    //     };
-    //     postController.showCreatePostPage(data,authService.isLoggedIn());
-    // });
-
+    onRoute('#/articles/create', function () {
+        // Show the new post page...
+        let data = {
+            fullname:sessionStorage['fullname']
+        };
+        articleController.showCreateArticlePage(data,authService.isLoggedIn());
+    });
+    
     bindEventHandler('login', function (event, data) {
         // Login the user...
         userController.login(data);
@@ -92,10 +92,10 @@ $(function () {
         userController.register(data);
     });
 
-    // bindEventHandler('createPost', function (event, data) {
-    //     // Create a new post...
-    //     postController.createPost(data)
-    // });
+    bindEventHandler('createArticle', function (event, data) {
+        // Create a new post...
+        articleController.createArticle(data);
+    });
 
     run('#/home');
 
