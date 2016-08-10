@@ -495,5 +495,13 @@ hr {
     to {
         transform: rotate(1turn)
     }
+}
 
+.audio-tag {
+    margin-left: 50px;
+    margin-top: 30px;
+    text-align: center;
+}
+hr {
+    border-color: black;
 }
