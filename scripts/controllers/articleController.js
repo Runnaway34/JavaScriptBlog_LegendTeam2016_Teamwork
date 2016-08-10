@@ -33,4 +33,23 @@ class ArticleController {
     }
     
     
+    
+    
+    
+    editArticle(requestData) {
+        // това може ли да стане с Update и заявка към kinvey?
+        
+    }
+    
+    deteleArticle(requestData) {
+       // От Kinvey ли да го направя като заявка и в отделен controller?
+    }
+    
+    commentArticle(requestData) {
+        
+        // Как да добавя поле за коментар след всяка публикация?
+        
+    }
+    
+    
 }

@@ -18,11 +18,25 @@ class UserController {
         let requestUrl = this._baseServiceUrl + "login";
         this._requester.post(requestUrl, requestData,
             function success(data) {
-                showPopup('success', "You have successfully logged in.");
 
                 sessionStorage['_authToken'] = data._kmd.authtoken;
                 sessionStorage['username'] = data.username;
                 sessionStorage['fullname'] = data.fullname;
+
+                if (sessionStorage['username'] === "admin" &&
+                    (sessionStorage['username'] === data.username &&
+                    (sessionStorage['fullname'] === data.fullname))) {
+                    showPopup('success', "Welcome Admin");
+
+                    redirectUrl('#/welcome-admin.html');
+                    
+                    // redirectUrl("#/home");
+                    return;
+                }
+
+                showPopup('success', "You have successfully logged in.");
+
+
 
                 redirectUrl("#/home");
             },

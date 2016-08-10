@@ -54,7 +54,8 @@ footer {
     text-align: center;
 }
 
-#create-new-article-request-button{
+#create-new-article-request-button {
+    display: inline-block;
     font: 15px Lato;
     color: white;
     background-color: black;
@@ -63,11 +64,24 @@ footer {
     margin-bottom: 15px;
     border: none;
     border-radius: 15px;
-    width: 300px;
+    width: 150px;
     text-align: center;
-    margin-left: 300px;
+    margin-left: 205px;
 }
-
+#cancel {
+    display: inline-block;
+    font: 15px Lato;
+    color: white;
+    background-color: black;
+    padding: 8px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 15px;
+    width: 150px;
+    text-align: center;
+    margin-left: 120px;
+}
 textarea {
     display: block;
     margin-left: 150px;

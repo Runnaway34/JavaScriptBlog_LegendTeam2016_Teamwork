@@ -41,6 +41,19 @@ $(function () {
         userController.showRegisterPage(authService.isLoggedIn())
     });
 
+    
+    
+    
+    
+    //Как да заредя welcome-admin.html?
+    onRoute("#/welcome-admin", function () {
+       homeView.showAdminPage();
+    });
+    //
+    
+    
+    
+    
     onRoute("#/login", function () {
         userController.showLoginPage(authService.isLoggedIn());
     });
