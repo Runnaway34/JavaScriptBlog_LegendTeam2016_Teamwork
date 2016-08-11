@@ -1,10 +1,13 @@
 {{#articleContent}}
 <li class="single-article">
-	<!--<article id="post-{{postId}}">-->
-	<article id="post">
-		<h3 class="article-title">{{title}}</h3> <!--ToDo make css for title-->
-		<p class="subtitle">Posted on {{date}} by {{author}}</p> <!--ToDo make css for subtitle-->
-		<p class="article-content">{{content}}</p> <!--ToDo make css for content-->
-	</article>
+    <!--<article id="post-{{postId}}">-->
+    <article id="post">
+        <h3 class="article-title">{{title}}</h3>
+        <p class="subtitle">Posted on {{date}} by {{author}}</p>
+        <p class="article-content">{{content}}</p>
+
+        <textarea name="comment" id="comment-2" style="display:none" cols="30" rows="10">{{comment}}</textarea>
+        <button id="add-comment" onclick="addComment(2)">Add Comment</button>
+    </article>
 </li>
 {{/articleContent}}
