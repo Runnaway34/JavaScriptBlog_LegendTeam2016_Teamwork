@@ -18,6 +18,7 @@ class Requester {
         this._makeRequest('PUT', url, data, requestHeaders, successCallback, errorCallback);
     }
 
+    
     delete(url, data, successCallback, errorCallback) {
         let requestHeaders = this._getHeaders(false);
         this._makeRequest('DELETE', url, data, requestHeaders, successCallback, errorCallback);
@@ -51,6 +52,7 @@ class Requester {
         return headers;
     }
 }
+
 
 let _guestCredentials;
 let _appCredentials;

@@ -1,63 +1,49 @@
 class UserView {
-    constructor(mainNav, mainContentSelector) {
-        this._selector = mainContentSelector;
-        this._mainContentSelector = mainNav;
+    constructor(selector,mainContentSelector) {
+        this._selector = selector;
+        this._mainContentSelector = mainContentSelector;
     }
-
+    
     showLoginPage(isLoggedIn) {
         let _that = this;
-        let templateUrl;
-        if(isLoggedIn) {
-            templateUrl = "templates/form-user.html";
-        }
-        else {
-            templateUrl = "templates/form-guest.html";
-        }
-        
+        let templateUrl= "templates/nav-guest.html";
+
         $.get(templateUrl, function (template) {
-            let renderedMainNav = Mustache.render(template, null);
+            let navSelector = Mustache.render(template, null);
+            $(_that._selector).html(navSelector);
+        });
+        $.get('templates/form-login.html', function (template) {
+            let renderMainContent = Mustache.render(template, null);
+            $(_that._mainContentSelector).html(renderMainContent);
 
-            $(_that._selector).html(renderedMainNav);
-            
-            $.get('templates/login.html', function (template) {
-                let rendered = Mustache.render(template, null);
-                $(_that._mainContentSelector).html(rendered);
+            $('#login-request-button').on('click', function (event) {
+                let username = $('#username').val();
+                let password = $('#password').val();
 
-                $('#login-request-button').on('click', function (event) {
-                    let username = $('#username').val();
-                    let password = $('#password').val();
+                let data = {
+                    username:username,
+                    password:password
+                };
 
-                    let data = {
-                        username:username,
-                        password:password
-                    };
-
-                    triggerEvent('login', data);
-                })
-            });
-        })
+                triggerEvent('login', data);
+            })
+        });
     }
+    
     
     showRegisterPage(isLoggedIn) {
         let _that = this;
+        let templateUrl= "templates/nav-guest.html";
+        $.get(templateUrl, function (template) {
+            let navSelector = Mustache.render(template, null);
+            $(_that._selector).html(navSelector);
+        });
+        
+            $.get('templates/form-register.html', function (template) {
 
-        let templateUrl;
-        if(isLoggedIn) {
-            templateUrl="templates/form-user.html";
-        }
-        else {
-            templateUrl="templates/form-guest.html";
-        }
-        $.get(templateUrl, function(template) {
-            let renderedMainNav = Mustache.render(template, null);
-             
-            $(_that._selector).html(renderedMainNav);
-
-            $.get('templates/register.html', function (template) {
-
-                let rendered = Mustache.render(template, null);
-
-                $(_that._mainContentSelector).html(rendered);
+                let renderMainContent = Mustache.render(template, null);
+                
+                $(_that._mainContentSelector).html(renderMainContent);
 
                 $('#register-request-button').on('click', function (ev) {
                     let username = $('#username').val(),
@@ -73,6 +59,5 @@ class UserView {
                     triggerEvent('register', data);
                 });
             });
-        });
     }
 }

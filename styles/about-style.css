@@ -1,0 +1,41 @@
+#team-info {
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 40px;
+}
+
+.info {
+    display: inline-block;
+    word-wrap: break-word;
+    padding-bottom: 10px;
+    width: 100px;
+
+
+}
+
+.description {
+    display: inline-block;
+    word-wrap: break-word;
+}
+
+.personal-interests {
+    display: inline-block;
+    word-wrap: break-word;
+}
+
+.image {
+    display: inline-block;
+}
+#georgi {
+    width: 200px;
+    height: 200px;
+}
+#yordan {
+    width: 200px;
+    height: 200px;
+}
+#teodor {
+    width: 200px;
+    height: 200px;
+}

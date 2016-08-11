@@ -19,18 +19,19 @@ class HomeController {
                     return date2 - date1;
                 });
 
-                for(let i = 0; i < data.length && i < 3;i++) {
+                for (let i = 0; i < data.length && i < 3; i++) {
                     data[i].postId = currentId;
                     currentId++;
                     recentPosts.push(data[i]);
                 }
-                _that._homeView.showGuestPage(recentPosts,data);
+                _that._homeView.showGuestPage(recentPosts, data);
             },
             function error(data) {
-                showPopup('error',"Error loading posts!");
+                showPopup('error', "Error loading posts!");
             }
         );
     }
+
     showUserPage() {
         let _that = this;
         let requestUrl = this._baseServiceUrl + "/appdata/" + this._appKey + "/articles";
@@ -48,5 +49,25 @@ class HomeController {
                 showPopup('error', "Error loading posts!");
             }
         );
+    }
+    showAudioPage() {
+        let _that = this;
+      $('onclick',function () {
+             _that._homeView.showAudioPage();
+        })
+    }
+
+    showVideoPage() {
+        let _that = this;
+        $('onclick',function () {
+            _that._homeView.showVideoPage();
+        })
+    }
+
+    showAboutPage() {
+        let _that = this;
+        $('onclick',function () {
+            _that._homeView.showAboutPage();
+        })
     }
 }

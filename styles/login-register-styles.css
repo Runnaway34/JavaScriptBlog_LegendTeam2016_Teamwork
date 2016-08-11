@@ -40,8 +40,15 @@
     margin-bottom: 15px;
 }
 #content{
+    background-color: white;
+}
+#login-content{
     background-color: silver;
 }
+#register-content{
+    background-color: silver;
+}
+
 #register-request-button {
     font: 15px Lato;
     color: white;

@@ -28,9 +28,9 @@ class UserController {
                     (sessionStorage['fullname'] === data.fullname))) {
                     showPopup('success', "Welcome Admin");
 
-                    redirectUrl('#/welcome-admin.html');
+                    // redirectUrl('#/welcome-admin.html');
                     
-                    // redirectUrl("#/home");
+                    redirectUrl("#/home");
                     return;
                 }
 
@@ -47,18 +47,18 @@ class UserController {
     }
 
     register(requestData) {
-        if (requestData.username.length < 5) {
-            showPopup('error', "Username must consist of at least 5 symbols.");
+        if ((requestData.username.length < 5) ) {
+            showPopup('error', "Username must must consist of at least 5 characters.");
             return;
         }
 
         if (requestData.fullname.length < 8) {
-            showPopup('error', "Full name must consist of at least 8 symbols.");
+            showPopup('error', "Full name must consist of at least 8 characters.");
             return;
         }
 
         if (requestData.password.length < 6) {
-            showPopup('error', "Password must consist of at least 6 symbols.");
+            showPopup('error', "Password must consist of at least 6 characters.");
             return;
         }
 
@@ -74,7 +74,7 @@ class UserController {
                 redirectUrl("#/login");
             },
             function error(data) {
-                showPopup('error', "An error has occurred while attempting to register.");
+                showPopup('error', "Username is already taken. Please try another");
 
             });
     }
