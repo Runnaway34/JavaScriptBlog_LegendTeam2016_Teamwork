@@ -1,0 +1,25 @@
+
+#video-title {
+    text-align: center;
+
+}
+
+#video-blog-title {
+    font: 20px Oswald;
+    font-weight: 600;
+    background-color: silver;
+    box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.7);
+}
+
+.video {
+
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+.video-content {
+
+    width: 95%;
+    margin: 30px auto;
+}
