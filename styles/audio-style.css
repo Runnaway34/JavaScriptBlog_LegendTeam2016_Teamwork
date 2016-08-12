@@ -1,0 +1,14 @@
+.audio-tag {
+    margin-left: 50px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+hr {
+    border-color: black;
+}
+.empty {
+    height: 30px;
+    background-color:black;
+    width: 100%;
+}

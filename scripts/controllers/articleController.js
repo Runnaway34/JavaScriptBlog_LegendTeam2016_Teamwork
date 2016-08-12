@@ -45,8 +45,8 @@ class ArticleController {
         }
 
         let requestUrl = this._baseServiceUrl;
-        
-        this._requester.put(requestUrl, requestData,
+
+        this._requester.post(requestUrl, requestData,
             function success(data) {
                 showPopup('success', "You have successfully created a new article.");
                 redirectUrl("#/home");
@@ -54,39 +54,25 @@ class ArticleController {
             function error(data) {
                 showPopup('error', "An error has occurred while attempting to create a new article");
             });
-        
-        
-        
-        
-        
-        
-        
-        // let _that = this;
-        // let requestUrl = this._baseServiceUrl + "/appdata/" + this._appKey + "/articles";
-        //
-        // function addComment(requestData, commentText, commentAuthor) {
-        //     if (!requestData.comments) {
-        //         requestData.comments = [];
-        //     }
-        //     requestData.comments.push(
-        //         {
-        //             text: commentText,
-        //             author: commentAuthor
-        //         }
-        //     )
-        // }
+    }
 
-
+    showCreateCommentPage() {
+        let _that = this;
+        $('#add-comment',function () {
+            _that._articleView.showCreateCommentPage();
+        })
     }
 
 
+
+
     editArticle(requestData) {
-        // това може ли да стане с Update и заявка към kinvey?
+
 
     }
 
     deteleArticle(requestData) {
-        // От Kinvey ли да го направя като заявка и в отделен controller?
+
     }
 
 

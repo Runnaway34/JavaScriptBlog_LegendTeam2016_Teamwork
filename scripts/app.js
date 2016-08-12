@@ -55,16 +55,9 @@ $(function () {
     });
 
     onRoute("#/about", function () {
-        homeController.showAboutPage();
+        homeView.showAboutPage(authService.isLoggedIn());
     });
-
-
     
-    //Как да заредя welcome-admin.html?
-    onRoute("#/welcome-admin", function () {
-       homeView.showAdminPage();
-    });
-
     onRoute("#/login", function () {
         userController.showLoginPage(authService.isLoggedIn());
     });
@@ -81,6 +74,11 @@ $(function () {
         articleController.showCreateArticlePage(data,authService.isLoggedIn());
     });
     
+    
+    
+    onRoute('#/create/comment', function () {
+        articleController.showCreateCommentPage(data,authService.isLoggedIn());
+    });
     
     bindEventHandler('login', function (event, data) {
         // Login the user...

@@ -59,7 +59,6 @@ class HomeView {
             });
         })
     }
-
     showVideoPage() {
         let _that = this;
         $.get('templates/nav-user.html',function (template) {
@@ -72,8 +71,8 @@ class HomeView {
             });
         })
     }
-    
     showAboutPage(isLoggedIn) {
+
         let _that = this;
         let templateUrl;
         if(isLoggedIn) {
@@ -82,16 +81,28 @@ class HomeView {
         else {
             templateUrl = "templates/nav-guest.html";
         }
+
         $.get(templateUrl,function (template) {
             let navSelector = Mustache.render(template,null);
             $(_that._selector).html(navSelector);
-
-            $.get('templates/about.html', function (template) {
-                let renderMainContent = Mustache.render(template, null);
-                $(_that._mainContentSelector).html(renderMainContent);
-            });
-        })
+        });
+        $.get('templates/about.html', function (template) {
+            let renderMainContent = Mustache.render(template, null);
+            $(_that._mainContentSelector).html(renderMainContent);
+        });
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     //Как да заредя Welcome-admin.html?
     // showAdminPage(mainData) {

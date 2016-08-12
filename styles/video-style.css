@@ -1,10 +1,13 @@
-
-#video-title {
-    text-align: center;
-
-}
+/*#video-title {*/
+    /*text-align: center;*/
+    /*margin-top: 30px;*/
+    /*padding: 15px;*/
+/*}*/
 
 #video-blog-title {
+    text-align: center;
+    margin-top: 30px;
+    padding: 15px;
     font: 20px Oswald;
     font-weight: 600;
     background-color: silver;
@@ -12,14 +15,13 @@
 }
 
 .video {
+    padding-left: 145px;
+    padding-top: 45px;
+    padding-bottom: 45px;
 
-    display: block;
-    position: relative;
-    overflow: hidden;
 }
 
-.video-content {
-
-    width: 95%;
-    margin: 30px auto;
-}
+/*.video-content {*/
+    /*width: 95%;*/
+    /*margin: 30px auto;*/
+/*}*/

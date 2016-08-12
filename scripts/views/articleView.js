@@ -1,61 +1,82 @@
 class ArticleView {
-    constructor(selector,mainContentSelector) {
+    constructor(selector, mainContentSelector) {
         this._selector = selector;
         this._mainContentSelector = mainContentSelector;
     }
 
     showCreateArticlePage(data, isLoggedIn) {
         let _that = this;
-        let templateUrl= "templates/nav-create-article.html";
-       
+        let templateUrl = "templates/nav-create-article.html";
+
 
         $.get(templateUrl, function (template) {
-            let navSelector = Mustache.render(template,null);
+            let navSelector = Mustache.render(template, null);
             $(_that._selector).html(navSelector);
         });
-        
-            $.get('templates/form-create-article.html', function (template) {
-                var renderMainContent = Mustache.render(template, null);
-                $(_that._mainContentSelector).html(renderMainContent);
 
-                $('#author').val(data.fullname);
+        $.get('templates/form-create-article.html', function (template) {
+            var renderMainContent = Mustache.render(template, null);
+            $(_that._mainContentSelector).html(renderMainContent);
 
-                $('#create-new-article-request-button').on('click', function (ev) {
-                    let title = $('#title').val();
-                    let author = $('#author').val();
-                    let content = $('#content').val();
-                    let date = moment().format("MMMM Do YYYY");
-                    let data = {
-                        title:title,
-                        author:author,
-                        content:content,
-                        date:date
-                    };
-                    triggerEvent('createArticle', data);
-                });
-                
-                $('#add-comment').on('click',function (ev) {
-                    
-                });
+            $('#author').val(data.fullname);
 
-                $('#create-new-comment-request-button').on('click', function (ev) {
-                    let title = $('#title').val();
-                    let author = $('#author').val();
-                    let content = $('#content').val();
-                    let date = moment().format("MMMM Do YYYY");
-                    let data = {
-                        title:title,
-                        author:author,
-                        content:content,
-                        date:date
-                    };
-                    triggerEvent('createComment', data);
-                })
+            $('#create-new-article-request-button').on('click', function (ev) {
+                let title = $('#title').val();
+                let author = $('#author').val();
+                let content = $('#content').val();
+                // let date = moment().format("MMMM Do YYYY");
+                let date = moment().format("MMMM Do YYYY,h:mm A");
+                let data = {
+                    title: title,
+                    author: author,
+                    content: content,
+                    date: date
+
+                };
+                triggerEvent('createArticle', data);
             });
+            // $('#create-new-comment-request-button').on('click', function (ev) {
+            //     let title = $('#title').val();
+            //     let author = $('#author').val();
+            //     let content = $('#content').val();
+            //     let date = moment().format("MMMM Do YYYY");
+            //     let data = {
+            //         title:title,
+            //         author:author,
+            //         content:content,
+            //         date:date
+            //     };
+            //     triggerEvent('createComment', data);
+            // })
+        });
+    }
+   
+    showCreateCommentPage(data, isLoggedIn) {
+        let _that = this;
+        let templateUrl = "templates/nav-create-comment.html";
+        $.get(templateUrl, function (template) {
+            let navSelector = Mustache.render(template, null);
+            $(_that._selector).html(navSelector);
+        });
+
+        $.get('templates/form-create-comment.html', function (template) {
+            var renderMainContent = Mustache.render(template, null);
+            $(_that._mainContentSelector).html(renderMainContent);
+            
+            // $('#create-new-comment-request-button').on('click', function (ev) {
+            //     let title = $('#title').val();
+            //     let author = $('#author').val();
+            //     let content = $('#content').val();
+            //     let date = moment().format("MMMM Do YYYY");
+            //     let data = {
+            //         title:title,
+            //         author:author,
+            //         content:content,
+            //         date:date
+            //     };
+            //     triggerEvent('createComment', data);
+            // })
+        });
     }
 }
 
-function addComment(num)
-{
-    $('#comment-' + num).show();
-}
