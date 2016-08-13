@@ -59,6 +59,7 @@ class HomeView {
             });
         })
     }
+    
     showVideoPage() {
         let _that = this;
         $.get('templates/nav-user.html',function (template) {

@@ -25,6 +25,9 @@ $(function () {
     
     let articleController = new ArticleController(articleView, requester, baseUrl, appKey);
     
+    let commentView = new CommentView(selector,mainContentSelector);
+    
+    let commentController = new CommentController(commentView, requester, baseUrl, appKey);
 
 
     initEventServices();
@@ -37,11 +40,11 @@ $(function () {
             homeController.showUserPage();
         }
     });
-    
-    // onRoute("#/about", function () {
-    //     homeView.showAboutPage;
-    // });
-    
+
+    onRoute("#/create/comment/", function (context) {
+        commentController.showCreateCommentPage(context.params.id);
+    });
+
     onRoute("#/register", function () {
         userController.showRegisterPage(authService.isLoggedIn())
     });
@@ -75,10 +78,12 @@ $(function () {
     });
     
     
-    
-    onRoute('#/create/comment', function () {
-        articleController.showCreateCommentPage(data,authService.isLoggedIn());
-    });
+    //
+    // onRoute('#/create/comment', function () {
+    //     articleController.showCreateCommentPage();
+    // });
+
+   
     
     bindEventHandler('login', function (event, data) {
         // Login the user...
@@ -95,5 +100,11 @@ $(function () {
         articleController.createArticle(data);
     });
     
+    bindEventHandler('createComment', function (event, data) {
+        // console.debug(data);
+        commentController.createComment(data);
+    });
+
+
     run('#/home');
 });
