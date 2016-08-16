@@ -33,11 +33,7 @@ class UserController {
                     redirectUrl("#/home");
                     return;
                 }
-
                 showPopup('success', "You have successfully logged in.");
-
-
-
                 redirectUrl("#/home");
             },
             function error(data) {

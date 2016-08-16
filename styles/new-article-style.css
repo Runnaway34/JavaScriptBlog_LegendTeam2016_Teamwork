@@ -69,6 +69,21 @@ footer {
     width: 170px;
     text-align: center;
 }
+
+#edit-article-request-button {
+    display: inline-block;
+    font: 15px Lato;
+    color: white;
+    background-color: black;
+    padding: 8px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 340px;
+    border: none;
+    border-radius: 15px;
+    width: 170px;
+    text-align: center;
+}
 /*#cancel {*/
     /*display: inline-block;*/
     /*font: 15px Lato;*/

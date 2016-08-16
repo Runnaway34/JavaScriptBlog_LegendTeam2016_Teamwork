@@ -5,12 +5,14 @@
         <h3 class="article-title">{{title}}</h3>
         <p class="subtitle">Posted on {{date}} by {{author}}</p>
         <p class="article-content">{{content}}</p>
-
         <!--<textarea name="comment" id="comment-1" style="display:none" cols="30" rows="10">{{comment}}</textarea>-->
         <!--<button id="add-comment" onclick="addComment(1)">Add Comment</button>-->
         <!--<button onclick="addComment()" id="add-comment">Add Comment</button>-->
+        <!--<a href="#/create/comment/?id={{_id}}">Add Comment</a>-->
 
-        <a href="#/create/comment/?id={{_id}}">Add Comment</a>
+        <a href="#/edit/article/?id={{_id}}">Edit Article</a>
+
+        <a href="#/delete/article/?id={{_id}}">Delete Article</a>
     </article>
 </li>
 {{/articleContent}}

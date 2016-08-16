@@ -1,0 +1,34 @@
+#title-form {
+    text-align: center;
+    font-size: 1.5em;
+}
+.content-comment {
+    resize: none;
+    margin-left: 285px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#create-new-comment-request-button {
+    margin-left: 285px;
+    font: 15px Lato;
+    color: white;
+    background-color: black;
+    padding: 8px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 15px;
+    width: 150px;
+}
+#cancel {
+    margin-left: 100px;
+    font: 15px Lato;
+    color: white;
+    background-color: black;
+    padding: 8px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 15px;
+    width: 150px;
+}

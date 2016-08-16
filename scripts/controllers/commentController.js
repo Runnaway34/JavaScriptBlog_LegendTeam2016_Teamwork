@@ -1,114 +1,84 @@
 class CommentController {
-    constructor(commentView, requester, baseUrl, appKey) {
+    constructor(commentView, requester, baseServiceUrl, appKey) {
         this._commentView = commentView;
         this._requester = requester;
         this._appKey = appKey;
-        this._baseServiceUrl = baseUrl + "/appdata/" + appKey + "/articles/";
+        this._baseServiceUrl = baseServiceUrl;
     }
-
-    createComment(requestData) {
-
-        // if (requestData.content.length < 10) {
-        //     showPopup('error', "Article content must consist of at least 10 symbols.");
-        //     return;
-        // }
-
-        let requestUrl = this._baseServiceUrl;
-
-        function getArticleById(id) {
-
-            
-            // let _that = this;
-            // requestUrl =  + id;
-
-            // let requestUrl = this._baseServiceUrl + "/appdata/" + this._appKey + "/articles/" + id;
-
-            let article = null;
-            this._requester.get(requestUrl,
-                function success(data) {
-                    article = data;
-                },
-                function error(data) {
-                    showPopup('error', "Error loading posts!");
-                }
-            );
-            return article;
-        }
-        let articleObj = getArticleById(requestData._id);
-        console.debug(articleObj);
-        if(!article.comment) {
-            articleObj.comment = [];
-        }
-        articleObj.comment.push({})
-
-        this._requester.put(requestUrl + requestData._id , requestData,
-            function success(data) {
-
-                showPopup('success', "You have successfully created a new article.");
-                redirectUrl("#/home");
-            },
-            function error(data) {
-                showPopup('error', "An error has occurred while attempting to create a new article");
-            });
-    }
-
-
-
-
-
 
     // createComment(requestData) {
+    //     const kinveyBooksUrl =  this._baseServiceUrl + "/appdata/" + this._appKey + "/articles";
+    //     const kinveyHeaders = {
+    //         'Authorization': "Kinvey " + sessionStorage.getItem('_authToken'),
+    //         'Content-type': 'application/json'
+    //     };
     //
-    //     if (requestData.content.length < 10) {
-    //         showPopup('error', "Article content must consist of at least 10 symbols.");
-    //         return;
+    //     if (!requestData.comments) {
+    //         requestData.comments = [];
     //     }
-    //
-    //     let requestUrl = this._baseServiceUrl;
-    //
-    //     function getArticleById(id) {
-    //
-    //         // let _that = this;
-    //         // requestUrl =  + id;
-    //
-    //         let requestUrl = this._baseServiceUrl + "/appdata/" + this._appKey + "/articles/" + id;
-    //
-    //         let article = null;
-    //         this._requester.get(requestUrl,
-    //             function success(data) {
-    //
-    //                 article = data;
-    //
-    //             },
-    //             function error(data) {
-    //                 showPopup('error', "Error loading posts!");
-    //             }
-    //         );
-    //         return article;
+    //     let commentText = $("#comment").val();
+    //     requestData.comments.push({textComment: commentText});
+    //     let stringy = JSON.stringify(requestData);
+    //     $.ajax({
+    //         method: "PUT",
+    //         url: kinveyBooksUrl + '/' + requestData._id,
+    //         headers: kinveyHeaders,
+    //         data: stringy,
+    //         success: addBookCommentSuccess
+    //     });
+    //     function addBookCommentSuccess(response) {
+    //         showPopup('success', "Article successfully updated");
+    //         redirectUrl("#/home");
     //     }
-    //     let articleObj = getArticleById(requestData._id);
+    // }
+    // editComment(requestData) {
+    //     const kinveyBooksUrl =  this._baseServiceUrl + "/appdata/" + this._appKey + "/articles";
+    //     const kinveyHeaders = {
+    //         'Authorization': "Kinvey " + sessionStorage.getItem('_authToken'),
+    //         'Content-type': 'application/json'
+    //     };
     //
-    //     this._requester.put(requestUrl + requestData._id , requestData,
-    //         function success(data) {
+    //     if (!requestData.comments) {
+    //         requestData.comments = [];
+    //     }
+    //     let commentText = $("#comment").val();
+    //     requestData.comments.push({textComment: commentText});
+    //     let stringy = JSON.stringify(requestData);
+    //     $.ajax({
+    //         method: "PUT",
+    //         url: kinveyBooksUrl + '/' + requestData._id,
+    //         headers: kinveyHeaders,
+    //         data: stringy,
+    //         success: addBookCommentSuccess
+    //     });
+    //     function addBookCommentSuccess(response) {
+    //         showPopup('success', "Article successfully updated");
+    //         redirectUrl("#/home");
+    //     }
+    // }
     //
-    //             showPopup('success', "You have successfully created a new article.");
+    // deleteArticle(id) {
+    //     let method = "DELETE";
+    //     let requestUrl = this._baseServiceUrl + "/appdata/" + this._appKey + "/articles/" + id;
+    //     let headers = {};
+    //     headers['Authorization'] = "Kinvey " + sessionStorage.getItem('_authToken');
+    //     headers['Content-Type'] = "application/json";
+    //    
+    //     let requestData = {
+    //         method: method,
+    //         url: requestUrl,
+    //         headers: headers
+    //     };
+    //     this._requester.delete(requestUrl, requestData,
+    //         function success(response) {
+    //             showPopup('success', "Article deleted successfully");
     //             redirectUrl("#/home");
     //         },
-    //         function error(data) {
-    //             showPopup('error', "An error has occurred while attempting to create a new article");
+    //         function (response) {
+    //             showPopup('error', "You are not authorized to delete this article");
     //         });
     // }
-
     showCreateCommentPage(articleId) {
         this._commentView.showCreateCommentPage(articleId);
-    }
-
-    editArticle(requestData) {
-
-
-    }
-
-    deteleArticle(requestData) {
-
     }
 }
