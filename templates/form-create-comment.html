@@ -1,9 +1,22 @@
+<h2 id="editor-title">Add comment</h2>
 <form id="comment-form">
-    <h2 id="title-form">Content:</h2>
-    <textarea class="content-comment" placeholder="Content" id="content" cols="60" rows="15"></textarea>
-    <button type="button" id="create-new-comment-request-button">Create Comment</button>
-    <button type="reset" id="cancel">Cancel</button>
+    <ul class="title-author">
+        <li class="single-element-form">
+            <h1 class="title-form">Comment Title:</h1>
+            <input type="text" value="" placeholder="Comment Title" id="commentTitle"/>
+        </li>
+        <!--<li class="single-element-form">
+            <h1 class="title-form">Author:</h1>
+            <input type="text" value="" placeholder="Comment Author" id="commentAuthor" disabled>
+        </li>-->
+    </ul>
+    <h1 id="title-form">Content:</h1>
+    <textarea class="content-field" placeholder="Comment Content" id="commentContent"></textarea>
+    <br>
+    <button type="button" id="create-new-comment-request-button">Post Comment</button>
+    <!--<button type="reset" id="cancel">Cancel</button>-->
 </form>
+
 <footer>
     <p class="footer-text">&copy; SOFTUNI Legend Team 2016, All Rights Reserved</p>
 </footer>

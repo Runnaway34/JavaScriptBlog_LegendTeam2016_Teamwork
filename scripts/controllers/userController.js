@@ -33,18 +33,22 @@ class UserController {
                     redirectUrl("#/home");
                     return;
                 }
+
                 showPopup('success', "You have successfully logged in.");
+
+
+
                 redirectUrl("#/home");
             },
             function error(data) {
-                showPopup('error', "An error has occurred while attempting to login.");
+                showPopup('error', "An error has occurred while attempting to log in.");
 
             });
     }
 
     register(requestData) {
         if ((requestData.username.length < 5) ) {
-            showPopup('error', "Username must must consist of at least 5 characters.");
+            showPopup('error', "Username must consist of at least 5 characters.");
             return;
         }
 

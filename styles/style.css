@@ -5,6 +5,7 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:400,300,700,900);
 @import url(https://fonts.googleapis.com/css?family=Oswald);
 @import url(https://fonts.googleapis.com/css?family=Delius);
+
 html,
 body,
 div,
@@ -373,9 +374,6 @@ footer {
     100% { transform: rotate(0deg); }
 }
 /*/////////////////////////*/
-
-
-
 
 
 

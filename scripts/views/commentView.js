@@ -3,9 +3,20 @@ class CommentView {
         this._selector = selector;
         this._mainContentSelector = mainContentSelector;
     }
-    showCreateCommentPage(articleId) {
+
+    showCreateCommentPage(isLoggedIn) {
         let _that = this;
-        let templateUrl = "templates/nav-create-comment.html";
+
+        let templateUrl = '';
+
+        if ((isLoggedIn)) {
+            templateUrl = "templates/nav-user.html";
+        }
+
+        else {
+            templateUrl = "templates/nav-guest.html"
+        }
+
         $.get(templateUrl, function (template) {
             let navSelector = Mustache.render(template, null);
             $(_that._selector).html(navSelector);
@@ -15,19 +26,33 @@ class CommentView {
             var renderMainContent = Mustache.render(template, null);
             $(_that._mainContentSelector).html(renderMainContent);
 
-            $('#create-new-comment-request-button').on('click', function (ev) {
-                let content = $('#content').val();
-                let date = moment().format("MMMM Do YYYY");
+            //$('#author').val(data.fullname); ToDo: Get author ID from login data
 
-                let data = {
-                    "content":content,
-                    "date":date,
-                    "_id":articleId
-                };
-                
-                triggerEvent('createComment', data);
-                
-            })
-        });
+            $('#create-new-comment-request-button').on('click', function (ev) {
+
+                if ((isLoggedIn != true)) {
+                    showPopup('error', "Please log in to be able to comment articles");
+                    return;
+                }
+
+                else {
+
+                    let commentTitle = $('#title').val();
+                    //let author = $('#author').val(); ToDo: Get author ID from login data
+                    let commentContent = $('#commentContent').val();
+                    let date = moment().format("MMMM Do YYYY,h:mm A");
+                    let data = {
+                        title: commentTitle,
+                        //author: commentAuthor, ToDo: Get author ID from login data
+                        content: commentContent,
+                        date: date,
+                        articleid: sessionStorage.getItem('id')
+                    };
+
+                    triggerEvent('createComment', data);
+                    
+                }
+            });
+        })
     }
 }
