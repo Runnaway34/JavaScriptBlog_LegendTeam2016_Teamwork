@@ -26,7 +26,7 @@ class CommentView {
             var renderMainContent = Mustache.render(template, null);
             $(_that._mainContentSelector).html(renderMainContent);
 
-            //$('#author').val(data.fullname); ToDo: Get author ID from login data
+            $('#commentAuthor').val(sessionStorage.getItem('fullname'));
 
             $('#create-new-comment-request-button').on('click', function (ev) {
 
@@ -38,12 +38,12 @@ class CommentView {
                 else {
 
                     let commentTitle = $('#title').val();
-                    //let author = $('#author').val(); ToDo: Get author ID from login data
+                    let commentAuthor = $('#commentAuthor').val();
                     let commentContent = $('#commentContent').val();
                     let date = moment().format("MMMM Do YYYY,h:mm A");
                     let data = {
                         title: commentTitle,
-                        //author: commentAuthor, ToDo: Get author ID from login data
+                        author: commentAuthor,
                         content: commentContent,
                         date: date,
                         articleid: sessionStorage.getItem('id')

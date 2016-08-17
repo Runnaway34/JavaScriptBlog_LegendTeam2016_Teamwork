@@ -6,7 +6,7 @@ class HomeController {
         this._appKey = appKey;
     }
 
-    showGuestPage() {
+    showGuestPage() { //Showing the newest three articles only.
         let _that = this;
         let recentPosts = [];
         let requestUrl = this._baseServiceUrl + "/appdata/" + this._appKey + "/articles";
@@ -32,7 +32,7 @@ class HomeController {
         );
     }
 
-    showUserPage() {
+    showUserPage() { //Showing the full articles list.
         let _that = this;
         let requestUrl = this._baseServiceUrl + "/appdata/" + this._appKey + "/articles";
 
@@ -50,21 +50,22 @@ class HomeController {
             }
         );
     }
-    showAudioPage() {
+
+    showAudioPage() { //Showing the audio page.
         let _that = this;
       $('onclick',function () {
              _that._homeView.showAudioPage();
         })
     }
 
-    showVideoPage() {
+    showVideoPage() { //Showing the video page.
         let _that = this;
         $('onclick',function () {
             _that._homeView.showVideoPage();
         })
     }
 
-    showAboutPage() {
+    showAboutPage() { //Showing the about page.
         let _that = this;
         $('onclick',function () {
             _that._homeView.showAboutPage();
