@@ -4,10 +4,8 @@
     /*padding: 15px;*/
 /*}*/
 
-#video-blog-title {
+#video-title {
     text-align: center;
-    margin-top: 30px;
-    padding: 15px;
     font: 20px Oswald;
     font-weight: 600;
     background-color: silver;
@@ -15,10 +13,10 @@
 }
 
 .video {
-    padding-left: 145px;
-    padding-top: 45px;
-    padding-bottom: 45px;
-
+    margin-right: auto;
+    margin-left: auto;
+    display:block;
+    width:700px;
 }
 
 /*.video-content {*/
