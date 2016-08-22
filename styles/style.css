@@ -177,12 +177,12 @@ body {
     /*background-color: rgba(254, 254, 254, 0.9);*/
     /*height: 60px;*/
 /*}*/
-h3 a {
+h3 > a {
     text-decoration: none;
     color: black;
 }
 
-h3 a:hover{
+h3 > a:hover{
     color: dimgray;
 }
 
