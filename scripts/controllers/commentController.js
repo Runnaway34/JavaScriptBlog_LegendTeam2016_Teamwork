@@ -25,4 +25,31 @@ class CommentController {
             function error(data) {
                 showPopup('error', "An error has occurred while attempting to post a comment.");
             });
-    }}
+    }
+
+    loadComments(requestData) {
+        this._requester.get(this._baseServiceUrl,
+            function success(data) {
+
+                let commentList = [];
+
+                for (let comment of data) {
+
+                    if (comment['articleid'] == requestData['_id']) {
+                        commentList.push(comment);
+                    }
+                }
+               requestData['commentsList'] = commentList;
+
+                triggerEvent('postCommentList', requestData);
+            },
+            function error(data) {
+
+
+            });
+
+
+    }
+
+
+}

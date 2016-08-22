@@ -1,0 +1,14 @@
+{{#selectedArticle}}
+    <article id="post">
+        <h3 class="article-title">{{title}}</h3>
+        <p class="subtitle">Posted on {{date}} by {{author}}</p>
+        <p class="selectedArticle">{{content}}</p>
+    </article>
+    <br>
+{{/selectedArticle}}
+{{#selectedArticleComments}}
+    <p class="comment-author">{{author}}</p>
+    <p class="comment-date">{{date}}</p>
+    <p class="comment-content">{{content}}</p>
+<br>
+{{/selectedArticleComments}}

@@ -32,8 +32,28 @@ class ArticleController {
             });
     }
 
-    
-   
+    getArticle() {
+        let articleid = sessionStorage.getItem('id');
+        let requestUrl = this._baseServiceUrl + articleid;
 
+        this._requester.get(requestUrl,
+            function success(selectedArticle) {
+
+                triggerEvent('loadComments', selectedArticle);
+
+            },
+
+            function error(data) {
+                showPopup('error', "Error loading this article!");
+            }
+
+        );
+    }
+
+    showSelectedArticle(data) {
+
+        this._articleView.showSelectedArticle(data);
+
+    }
 
 }

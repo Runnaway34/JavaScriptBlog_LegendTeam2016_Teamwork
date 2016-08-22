@@ -74,6 +74,11 @@ $(function () {
         sessionStorage.setItem('id', this.params['id']);
     });
 
+    onRoute('#/article/:id', function () {
+        sessionStorage.setItem('id', this.params['id']);
+        articleController.getArticle();
+    });
+
     // Event Handlers //
 
     bindEventHandler('register', function (event, data) {
@@ -94,6 +99,16 @@ $(function () {
     bindEventHandler('createComment', function (event, data) {
         //  Create a new comment...
         commentController.createComment(data);
+    });
+
+    bindEventHandler('loadComments', function (event, data){
+        // Creates a list of all comments
+        commentController.loadComments(data);
+    });
+
+    bindEventHandler('postCommentList', function (event, data){
+        // Post a list with all comments
+        articleController.showSelectedArticle(data);
     });
 
     run('#/home');

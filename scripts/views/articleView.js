@@ -4,7 +4,7 @@ class ArticleView {
         this._mainContentSelector = mainContentSelector;
     }
 
-    showCreateArticlePage(data, isLoggedIn) {
+    showCreateArticlePage(data) {
         let _that = this;
         let templateUrl = "templates/nav-create-article.html";
         
@@ -32,6 +32,22 @@ class ArticleView {
                 };
                 triggerEvent('createArticle', data);
             });
+        });
+    }
+
+    showSelectedArticle(article) {
+        let _that = this;
+
+        let theData = {
+            selectedArticle: article,
+            selectedArticleComments: article['commentsList']
+        };
+
+        $.get('templates/selected-article.html', function (template) {
+            var renderMainContent = Mustache.render(template, theData);
+            $(_that._mainContentSelector).html(renderMainContent);
+
+
         });
     }
 }
