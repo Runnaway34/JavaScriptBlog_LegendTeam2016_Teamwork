@@ -47,9 +47,5 @@ class CommentController {
 
 
             });
-
-
     }
-
-
 }

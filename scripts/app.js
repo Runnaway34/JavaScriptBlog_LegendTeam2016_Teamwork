@@ -73,11 +73,26 @@ $(function () {
        commentController.showCreateCommentPage(authService.isLoggedIn());
         sessionStorage.setItem('id', this.params['id']);
     });
-
+    
     onRoute('#/article/:id', function () {
         sessionStorage.setItem('id', this.params['id']);
         articleController.getArticle();
     });
+
+
+    onRoute("#/edit/article/", function (data) {
+        let articleId  = data.params.id;
+        articleController.showEditArticlePage(articleId);
+    });
+
+    onRoute('#/delete/article/', function (articleId) {
+        articleController.deleteArticle(articleId.params.id);
+    });
+
+
+
+
+
 
     // Event Handlers //
 
@@ -110,7 +125,10 @@ $(function () {
         // Post a list with all comments
         articleController.showSelectedArticle(data);
     });
-
+    
+    bindEventHandler('editArticle', function (event, data) {
+        articleController.editArticle(data);
+    });
     run('#/home');
 
 });

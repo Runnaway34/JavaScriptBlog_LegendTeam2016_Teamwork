@@ -9,7 +9,7 @@ class CommentView {
 
         let templateUrl = '';
 
-        if ((isLoggedIn)) {
+        if (isLoggedIn) {
             templateUrl = "templates/nav-user.html";
         }
 
@@ -32,7 +32,7 @@ class CommentView {
 
                 if ((isLoggedIn != true)) {
                     showPopup('error', "Please log in to be able to comment articles");
-                    return;
+                   redirectUrl("#/login");
                 }
 
                 else {
