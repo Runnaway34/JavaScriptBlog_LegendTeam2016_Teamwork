@@ -28,24 +28,23 @@ class CommentController {
     }
 
     loadComments(requestData) {
+        
         this._requester.get(this._baseServiceUrl,
             function success(data) {
-
                 let commentList = [];
-
                 for (let comment of data) {
-
-                    if (comment['articleid'] == requestData['_id']) {
+                    if (comment['articleid'] == requestData['_id'])  {
                         commentList.push(comment);
                     }
                 }
-               requestData['commentsList'] = commentList;
+                
+                requestData['commentsList'] = commentList;
 
                 triggerEvent('postCommentList', requestData);
             },
+
             function error(data) {
-
-
+                showPopup('error', "Error");
             });
     }
 }

@@ -88,12 +88,7 @@ $(function () {
     onRoute('#/delete/article/', function (articleId) {
         articleController.deleteArticle(articleId.params.id);
     });
-
-
-
-
-
-
+    
     // Event Handlers //
 
     bindEventHandler('register', function (event, data) {
@@ -130,5 +125,4 @@ $(function () {
         articleController.editArticle(data);
     });
     run('#/home');
-
 });

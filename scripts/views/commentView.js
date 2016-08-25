@@ -30,13 +30,12 @@ class CommentView {
 
             $('#create-new-comment-request-button').on('click', function (ev) {
 
-                if ((isLoggedIn != true)) {
+                if (isLoggedIn != true) {
                     showPopup('error', "Please log in to be able to comment articles");
-                   redirectUrl("#/login");
+                    redirectUrl("#/login");
                 }
 
                 else {
-
                     let commentTitle = $('#title').val();
                     let commentAuthor = $('#commentAuthor').val();
                     let commentContent = $('#commentContent').val();
@@ -50,7 +49,6 @@ class CommentView {
                     };
 
                     triggerEvent('createComment', data);
-                    
                 }
             });
         })

@@ -21,11 +21,14 @@ class ArticleView {
 
             $('#create-new-article-request-button').on('click', function (ev) {
                 let title = $('#title').val();
+                
+                let tag = $('#tag').val();
                 let author = $('#author').val();
                 let content = $('#content').val();
                 let date = moment().format("MMMM Do YYYY,h:mm A");
                 let data = {
                     title: title,
+                    tag:tag,
                     author: author,
                     content: content,
                     date: date
@@ -37,7 +40,6 @@ class ArticleView {
 
     showSelectedArticle(article) {
         let _that = this;
-
         let theData = {
             selectedArticle: article,
             selectedArticleComments: article['commentsList']
@@ -73,7 +75,7 @@ class ArticleView {
         // $('#article-author').val(authorName);
         
 
-        // $('#article-author').val(sessionStorage.getItem('fullname'));
+        $('#article-author').val(sessionStorage.getItem('fullname'));
         $.get('templates/form-edit-article.html', function (template) {
             var renderMainContent = Mustache.render(template, null);
             $(_that._mainContentSelector).html(renderMainContent);
