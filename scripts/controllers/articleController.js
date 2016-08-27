@@ -4,7 +4,6 @@ class ArticleController {
         this._requester = requester;
         this._appKey = appKey;
         this._baseServiceUrl = baseUrl + "/appdata/" + appKey + "/articles/";
-        this._baseRequestUrlComment = baseUrl + "/appdata/" + appKey + "/comments/";
     }
 
     showCreateArticlePage(data, isLoggedIn) {
@@ -21,7 +20,7 @@ class ArticleController {
             showPopup('error', "Article content must consist of at least 50 symbols.");
             return;
         }
-
+        
         let requestUrl = this._baseServiceUrl;
         this._requester.post(requestUrl, requestData,
             function success(data) {
@@ -45,7 +44,7 @@ class ArticleController {
                 showPopup('error', "Error loading this article!");
             });
     }
-
+    
     showSelectedArticle(data) {
         this._articleView.showSelectedArticle(data);
     }
@@ -53,8 +52,7 @@ class ArticleController {
     showEditArticlePage(data, isLoggedIn) {
         this._articleView.showEditArticlePage(data, isLoggedIn);
     }
-
-
+    
     editArticle(requestData) {
         if (requestData.title.length < 10) {
             showPopup('error', "Article title must consist of at least 10 symbols.");
@@ -96,8 +94,7 @@ class ArticleController {
         headers['Authorization'] = "Kinvey " + sessionStorage.getItem('_authToken');
         headers['Content-Type'] = "application/json";
         let requestData = {
-            headers: headers,
-            _id: articleId
+            headers: headers
         };
         
         this._requester.delete(requestUrl, requestData,

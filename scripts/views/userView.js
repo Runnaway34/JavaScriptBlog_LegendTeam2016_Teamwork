@@ -30,7 +30,6 @@ class UserView {
         });
     }
     
-    
     showRegisterPage(isLoggedIn) {
         let _that = this;
         let templateUrl= "templates/nav-guest.html";

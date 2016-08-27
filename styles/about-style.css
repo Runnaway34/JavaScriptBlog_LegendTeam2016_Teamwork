@@ -4,22 +4,16 @@
     padding-bottom: 15px;
     font-size: 40px;
 }
-
+.team-member {
+    border-bottom: 2px solid #dadada;
+}
 .info {
     display: inline-block;
     word-wrap: break-word;
     padding-bottom: 10px;
     width: 100px;
-
-
 }
-
-.description {
-    display: inline-block;
-    word-wrap: break-word;
-}
-
-.personal-interests {
+.description,.personal-interests {
     display: inline-block;
     word-wrap: break-word;
 }
@@ -27,15 +21,7 @@
 .image {
     display: inline-block;
 }
-#georgi {
-    width: 200px;
-    height: 200px;
-}
-#yordan {
-    width: 200px;
-    height: 200px;
-}
-#teodor {
+#georgi,#yordan,#teodor {
     width: 200px;
     height: 200px;
 }

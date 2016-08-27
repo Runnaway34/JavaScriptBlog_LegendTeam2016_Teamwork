@@ -134,6 +134,7 @@ table {
 }
 
 /*NB!!!!!DO NOT CHANGE ANYTHING!!!!!*/
+
 body {
     background-image: url("../images/background (2).jpg");
     background-size: cover;
@@ -147,13 +148,13 @@ body {
     min-height: 50%;
 }
 
-/*Navigation Css*/
-
 .main-content {
     margin: 0 auto;
     min-height: inherit;
     width: 60%;
 }
+
+/*Navigation Css*/
 
 /*#mainNav {*/
     /*margin-top: -100px;*/
@@ -166,6 +167,7 @@ body {
     /*background-color: rgba(254, 254, 254, 0.9);*/
     /*height: 60px;*/
 /*}*/
+
 /*.main-nav {*/
     /*margin-top: 100px;*/
     /*padding: 10px;*/
@@ -177,15 +179,19 @@ body {
     /*background-color: rgba(254, 254, 254, 0.9);*/
     /*height: 60px;*/
 /*}*/
+
 h3 > a {
     text-decoration: none;
     color: black;
 }
-
-h3 > a:hover{
-    color: dimgray;
+.links {
+    text-decoration: none;
+    color: black;
 }
 
+.links:hover {
+    color: dimgray;
+}
 nav ul {
     list-style-type: none;
     padding: 0;
@@ -211,7 +217,6 @@ nav ul li a {
 
 nav ul li:hover ul {
     display: inline-block;
-
 }
 
 #img {
@@ -224,16 +229,14 @@ nav ul li:hover ul {
 
 #logo {
     padding-left: 15px;
-    padding-top: 10px;
-    /*display: inline-block;*/
+    padding-bottom: 10px;
     float: left;
 }
 
 #icon {
-    width: 40px;
-    height: 40px;
+    width: 80px;
+    height: 60px;
     display: inline-block;
-
 }
 
 /*Articles*/
@@ -250,25 +253,20 @@ nav ul li:hover ul {
     text-decoration: none;
 }
 
-
-
 footer {
     margin: 30px;
     text-align: center;
 }
 
-/*Audio*/
-
-
-
 .article-title {
     font-size: 30px;
+    word-wrap: break-word;
+    margin-top: 30px;
 }
 
 .subtitle {
     padding-top: 10px;
     padding-bottom: 10px;
-
     font-size: 16px;
 }
 
@@ -280,109 +278,3 @@ footer {
     width: 100%;
     margin-bottom: 20px;
 }
-
-
-
-/*Loading Effects*/
-
-/*TODO*/
-#loader {
-    position: fixed;
-    top: 35%;
-    left: 45%;
-    border: 16px solid #f3f3f3;
-    border-radius: 50%;
-    border-top: 16px solid #06C0AB;
-    border-bottom: 16px solid #06C0AB;
-    width: 120px;
-    height: 120px;
-    -webkit-animation: first-spin 4s linear infinite;
-    animation: first-spin 4s linear infinite;
-}
-
-#loader-2 {
-    border: 10px solid #f3f3f3;
-    border-radius: 50%;
-    border-top: 10px solid #06C0AB;
-    border-bottom: 10px solid #06C0AB;
-    width: 100px;
-    height: 100px;
-    -webkit-animation: second-spin 4s linear infinite;
-    animation: second-spin 4s linear infinite;
-}
-
-#loader-3 {
-    border: 10px solid #f3f3f3;
-    border-radius: 50%;
-    border-top: 10px solid #06C0AB;
-    border-bottom: 10px solid #06C0AB;
-    width: 80px;
-    height: 80px;
-    -webkit-animation: second-spin 4s linear infinite;
-    animation: second-spin 4s linear infinite;
-}
-
-#loader-4 {
-    border: 10px solid #f3f3f3;
-    border-radius: 50%;
-    border-top: 10px solid #06C0AB;
-    border-bottom: 10px solid #06C0AB;
-    width: 60px;
-    height: 60px;
-    -webkit-animation: second-spin 4s linear infinite;
-    animation: second-spin 4s linear infinite;
-}
-
-#loader-5 {
-    border: 10px solid #f3f3f3;
-    border-radius: 50%;
-    border-top: 10px solid #06C0AB;
-    border-bottom: 10px solid #06C0AB;
-    width: 40px;
-    height: 40px;
-    -webkit-animation: second-spin 4s linear infinite;
-    animation: second-spin 4s linear infinite;
-}
-
-@-webkit-keyframes first-spin {
-    0% { -webkit-transform: rotate(0deg); }
-    100% { -webkit-transform: rotate(360deg); }
-}
-
-@-moz-keyframes first-spin {
-    0% { -moz-transform: rotate(0deg); }
-    100% { -moz-transform: rotate(360deg); }
-}
-
-@keyframes first-spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-@-webkit-keyframes second-spin {
-    0% { -webkit-transform: rotate(0deg); }
-    25% { -webkit-transform: rotate(180deg); }
-    50% { -webkit-transform: rotate(360deg); }
-    75% { -webkit-transform: rotate(180deg); }
-    100% { -webkit-transform: rotate(0deg); }
-}
-
-@-moz-keyframes second-spin {
-    0% { -moz-transform: rotate(0deg); }
-    25% { -moz-transform: rotate(180deg); }
-    50% { -moz-transform: rotate(360deg); }
-    75% { -moz-transform: rotate(180deg); }
-    100% { -moz-transform: rotate(0deg); }
-}
-
-@keyframes second-spin {
-    0% { transform: rotate(0deg); }
-    25% { transform: rotate(180deg); }
-    50% { transform: rotate(360deg); }
-    75% { transform: rotate(180deg); }
-    100% { transform: rotate(0deg); }
-}
-/*/////////////////////////*/
-
-
-

@@ -6,7 +6,6 @@
 .new-article-block {
     background: #dadada;
     width: 900px;
-    /*margin: 0 auto;*/
     margin-top: 50px;
     padding: 20px;
     border-radius: 20px;
@@ -21,7 +20,7 @@
     text-align: center;
 }
 
-#article-form {
+.article-form {
     background: silver;
     border-radius: 20px;
     margin: 10px;
@@ -55,7 +54,9 @@ footer {
     text-align: center;
 }
 
-#create-new-article-request-button {
+#create-new-article-request-button,
+#create-new-comment-request-button,
+#edit-article-request-button  {
     display: inline-block;
     font: 15px Lato;
     color: white;
@@ -69,20 +70,6 @@ footer {
     width: 170px;
     text-align: center;
 }
-/*#cancel {*/
-    /*display: inline-block;*/
-    /*font: 15px Lato;*/
-    /*color: white;*/
-    /*background-color: black;*/
-    /*padding: 8px;*/
-    /*margin-top: 15px;*/
-    /*margin-bottom: 15px;*/
-    /*border: none;*/
-    /*border-radius: 15px;*/
-    /*width: 150px;*/
-    /*text-align: center;*/
-    /*margin-left: 120px;*/
-/*}*/
 textarea {
     display: block;
     margin-left: 150px;

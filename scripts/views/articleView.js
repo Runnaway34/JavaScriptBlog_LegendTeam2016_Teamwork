@@ -21,18 +21,18 @@ class ArticleView {
 
             $('#create-new-article-request-button').on('click', function (ev) {
                 let title = $('#title').val();
-                
                 let tag = $('#tag').val();
                 let author = $('#author').val();
                 let content = $('#content').val();
                 let date = moment().format("MMMM Do YYYY,h:mm A");
                 let data = {
                     title: title,
-                    tag:tag,
+                    // tag:tag,
                     author: author,
                     content: content,
                     date: date
                 };
+                $.get();
                 triggerEvent('createArticle', data);
             });
         });
@@ -44,12 +44,9 @@ class ArticleView {
             selectedArticle: article,
             selectedArticleComments: article['commentsList']
         };
-
         $.get('templates/selected-article.html', function (template) {
             var renderMainContent = Mustache.render(template, theData);
             $(_that._mainContentSelector).html(renderMainContent);
-
-
         });
     }
 
@@ -69,17 +66,13 @@ class ArticleView {
             let navSelector = Mustache.render(template, null);
             $(_that._selector).html(navSelector);
         });
-
         
         
-        // $('#article-author').val(authorName);
-        
-
-        $('#article-author').val(sessionStorage.getItem('fullname'));
         $.get('templates/form-edit-article.html', function (template) {
+            
             var renderMainContent = Mustache.render(template, null);
             $(_that._mainContentSelector).html(renderMainContent);
-
+            $('#article-author').val(sessionStorage.getItem('fullname'));
             $('#edit-article-request-button').on('click', function (ev) {
                 let title = $('#article-title').val();
                 let content = $('#article-content').val();
@@ -93,7 +86,6 @@ class ArticleView {
                     "_id":articleId
                 };
                 triggerEvent('editArticle', data);
-
             })
         });
     }

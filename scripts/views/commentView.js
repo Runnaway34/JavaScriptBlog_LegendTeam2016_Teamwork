@@ -36,18 +36,15 @@ class CommentView {
                 }
 
                 else {
-                    let commentTitle = $('#title').val();
                     let commentAuthor = $('#commentAuthor').val();
                     let commentContent = $('#commentContent').val();
-                    let date = moment().format("MMMM Do YYYY,h:mm A");
+                    let date = moment().format("MMMM Do YYYY, h:mm A");
                     let data = {
-                        title: commentTitle,
                         author: commentAuthor,
                         content: commentContent,
                         date: date,
                         articleid: sessionStorage.getItem('id')
                     };
-
                     triggerEvent('createComment', data);
                 }
             });

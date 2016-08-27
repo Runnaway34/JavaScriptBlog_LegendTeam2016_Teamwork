@@ -1,17 +1,15 @@
 {{#articleContent}}
 <li class="single-article">
     <article id="post">
-        <h3 class="article-title"><a href="#/article/{{_id}}">{{title}}</a></h3>
+        <h3 class="article-title"><a href="#/article/{{_id}}" class="links">{{title}}</a></h3>
         <p class="subtitle">Posted on {{date}} by {{author}}</p>
         <p class="article-content">{{content}}</p>
-        <!--<p class="tag">Tags: {{tag}}</p>-->
-        <p class="tag"><a href="#/article/{{_id}}">{{tag}}</a></p>
 
-        <a href="#/create/comment/{{_id}}">Add Comment</a>
+        <!--<p class="tag"><a href="#/article/{{_id}}">{{tag}}</a></p>-->
 
-        <a href="#/edit/article/?id={{_id}}">Edit Article</a>
-
-        <a href="#/delete/article/?id={{_id}}">Delete Article</a>
+        <a href="#/create/comment/{{_id}}" class="links">Add Comment</a>
+        <a href="#/edit/article/?id={{_id}}" class="links">Edit Article</a>
+        <a href="#/delete/article/?id={{_id}}" class="links">Delete Article</a>
     </article>
     <br>
 </li>

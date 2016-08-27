@@ -3,7 +3,7 @@ class HomeView {
         this._selector = selector;
         this._mainContentSelector = mainContentSelector;
     }
-    
+
     showGuestPage(mainData) {
         let _that = this;
         $.get('templates/nav-guest.html',function (template) {
@@ -27,7 +27,7 @@ class HomeView {
 
     showUserPage(mainData) {
         let _that = this;
-        
+
         $.get('templates/nav-user.html',function (template) {
             let navSelector = Mustache.render(template,null);
             $(_that._selector).html(navSelector);
@@ -46,19 +46,6 @@ class HomeView {
         })
 
     }
-
-    showAudioPage() {
-        let _that = this;
-        $.get('templates/nav-user.html',function (template) {
-            let navSelector = Mustache.render(template,null);
-            $(_that._selector).html(navSelector);
-
-            $.get('templates/audio.html', function (template) {
-                let renderMainContent = Mustache.render(template, null);
-                $(_that._mainContentSelector).html(renderMainContent);
-            });
-        })
-    }
     
     showVideoPage() {
         let _that = this;
@@ -72,8 +59,8 @@ class HomeView {
             });
         })
     }
+    
     showAboutPage(isLoggedIn) {
-
         let _that = this;
         let templateUrl;
         if(isLoggedIn) {
@@ -92,32 +79,4 @@ class HomeView {
             $(_that._mainContentSelector).html(renderMainContent);
         });
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    //Как да заредя Welcome-admin.html?
-    // showAdminPage(mainData) {
-    //     let _that = this;
-    //     $.get('templates/welcome-admin.html', function (template) {
-    //         let renderedWrapper = Mustache.render(template, null);
-    //         $(_that._selector).html(renderedWrapper);
-    //         $.get('templates/articles.html', function (template) {
-    //             let articles = {
-    //                 articleContent: mainData
-    //             };
-    //             let renderedArticles = Mustache.render(template, articles);
-    //             $('.articles').html(renderedArticles);
-    //         });
-    //     });
-    // }
 }

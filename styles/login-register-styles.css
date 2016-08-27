@@ -1,4 +1,5 @@
 /*NB!!!!!DO NOT CHANGE ANYTHING!!!!!*/
+
 .main-nav {
     text-align: center;
     margin-top: auto;
@@ -9,7 +10,7 @@
     background-color:rgba(254,254,254,0.9);
     height: 60px;
 }
-.register{
+.register,.login{
     border-radius: 10px;
     background-color: #f2f2f2;
     box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.7);
@@ -18,17 +19,6 @@
     height: auto;
     padding: 10px;
     text-align: center;
-}
-.login{
-    border-radius: 10px;
-    background-color: #f2f2f2;
-    box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.7);
-    margin: 10% auto;
-    width: 40%;
-    height: auto;
-    padding: 10px;
-    text-align: center;
-
 }
 .title{
     font: 55px Oswald;
@@ -42,13 +32,13 @@
 #content{
     background-color: white;
 }
-#login-content{
-    background-color: silver;
-}
+
+#login-content,
 #register-content{
     background-color: silver;
 }
 
+#login-request-button,
 #register-request-button {
     font: 15px Lato;
     color: white;
@@ -58,16 +48,5 @@
     margin-bottom: 10px;
     border: none;
     border-radius: 15px;
-    width: 70px;
-}
-#login-request-button {
-    font: 15px Lato;
-    color: white;
-    background-color: black;
-    padding: 8px;
-    margin-top: 15px;
-    margin-bottom: 10px;
-    border: none;
-    border-radius: 15px;
-    width: 70px;
+    width: 170px;
 }

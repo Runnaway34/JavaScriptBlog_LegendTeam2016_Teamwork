@@ -3,12 +3,11 @@ $(function () {
     let appKey = "kid_ryNU2M9d";
     let appSecret = "9a10f2ce7f3b476e85e647ba672d5bb2";
     let _guestCredentials = "d99412bd-d47f-43b2-893e-2662d2b0b11e.WqAhBgnI6gT/vr4edgmgvRHD3IDNWDeXvLofWYN+nO4=";
-
+    
     let authService = new AuthorizationService(baseUrl, appKey, appSecret, _guestCredentials);
         authService.initAuthorizationType("Kinvey");
-
+    
     let requester = new Requester(authService);
-
     let selector = ".nav";
     let mainContentSelector = ".main-content";
     
@@ -18,12 +17,18 @@ $(function () {
     let userView = new UserView(selector,mainContentSelector);
     let userController = new UserController(userView,requester,baseUrl,appKey);
     
-    let articleView = new ArticleView(selector,mainContentSelector);
-    let articleController = new ArticleController(articleView, requester, baseUrl, appKey);
-    
     let commentView = new CommentView(selector,mainContentSelector);
     let commentController = new CommentController(commentView, requester, baseUrl, appKey);
-
+    
+    let articleView = new ArticleView(selector,mainContentSelector);
+    let articleController = new ArticleController(articleView, requester, baseUrl, appKey);
+  
+    let imageView = new ImageView(selector,mainContentSelector);
+    let imageController = new ImageController(imageView,requester,baseUrl,appKey);
+    
+    let audioView = new AudioView(selector,mainContentSelector);
+    let audioController = new AudioController(audioView,requester,baseUrl,appKey);
+    
     initEventServices();
 
     // onRoutes //
@@ -40,15 +45,19 @@ $(function () {
     onRoute("#/register", function () {
         userController.showRegisterPage(authService.isLoggedIn())
     });
-
+    
     onRoute("#/audio", function () {
-        homeController.showAudioPage(authService.isLoggedIn());
+        audioController.showAudioPage();
     });
-
+    
     onRoute("#/video", function () {
         homeController.showVideoPage(authService.isLoggedIn());
     });
-
+    
+    onRoute("#/images", function () {
+        imageController.showImagesPage();
+    });
+    
     onRoute("#/about", function () {
         homeView.showAboutPage(authService.isLoggedIn());
     });
@@ -78,8 +87,7 @@ $(function () {
         sessionStorage.setItem('id', this.params['id']);
         articleController.getArticle();
     });
-
-
+    
     onRoute("#/edit/article/", function (data) {
         let articleId  = data.params.id;
         articleController.showEditArticlePage(articleId);
