@@ -9,18 +9,16 @@ class ArticleController {
     showCreateArticlePage(data, isLoggedIn) {
         this._articleView.showCreateArticlePage(data, isLoggedIn);
     }
-
     createArticle(requestData) {
         if (requestData.title.length < 10) {
             showPopup('error', "Article title must consist of at least 10 symbols.");
             return;
         }
-
         if (requestData.content.length < 50) {
             showPopup('error', "Article content must consist of at least 50 symbols.");
             return;
         }
-        
+
         let requestUrl = this._baseServiceUrl;
         this._requester.post(requestUrl, requestData,
             function success(data) {
@@ -30,6 +28,34 @@ class ArticleController {
             function error(data) {
                 showPopup('error', "An error has occurred while attempting to create a new article");
             });
+    }
+
+    sortArticleByTag() {
+        let _that = this;
+        let articleByTag = [];
+        let requestUrl = this._baseServiceUrl;
+        let sportTag = "Sport";
+        let programmingTag = "Programming";
+        this._requester.get(requestUrl,
+            function success(data) {
+
+                data.sort(function (elem1, elem2) {
+                    let date1 = new Date(elem1._kmd.ect);
+                    let date2 = new Date(elem2._kmd.ect);
+                    return date2 - date1;
+                });
+
+                for (let i = 0; i < data.length; i++) {
+                    if (data[i].tag == sportTag) {
+                        articleByTag.push(data[i]);
+                    }
+                }
+                _that._articleView.showSortedArticle(articleByTag);
+            },
+            function error(data) {
+                showPopup('error', "Error loading posts!");
+            }
+        );
     }
 
     getArticle() {
@@ -44,7 +70,7 @@ class ArticleController {
                 showPopup('error', "Error loading this article!");
             });
     }
-    
+
     showSelectedArticle(data) {
         this._articleView.showSelectedArticle(data);
     }
@@ -52,7 +78,7 @@ class ArticleController {
     showEditArticlePage(data, isLoggedIn) {
         this._articleView.showEditArticlePage(data, isLoggedIn);
     }
-    
+
     editArticle(requestData) {
         if (requestData.title.length < 10) {
             showPopup('error', "Article title must consist of at least 10 symbols.");
@@ -73,9 +99,9 @@ class ArticleController {
             title: articleTitle,
             content: articleText,
             author: articleAuthor,
-            date:date
+            date: date
         };
-        
+
         this._requester.put(requestUrl, request,
             function success(response) {
                 showPopup("success", "You have successfully deleted this article");
@@ -87,7 +113,7 @@ class ArticleController {
     }
 
     deleteArticle(articleId) {
-        
+
         let requestUrl = this._baseServiceUrl + articleId;
 
         let headers = {};
@@ -96,7 +122,7 @@ class ArticleController {
         let requestData = {
             headers: headers
         };
-        
+
         this._requester.delete(requestUrl, requestData,
             function success(response) {
                 showPopup("success", "You have successfully deleted this article");

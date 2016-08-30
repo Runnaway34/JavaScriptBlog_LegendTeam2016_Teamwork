@@ -7,6 +7,7 @@ class HomeController {
     }
 
     showGuestPage() {
+        
         let _that = this;
         let recentPosts = [];
         let requestUrl = this._baseServiceUrl + "/appdata/" + this._appKey + "/articles";
@@ -18,7 +19,7 @@ class HomeController {
                     let date2 = new Date(elem2._kmd.ect);
                     return date2 - date1;
                 });
-
+                
                 for (let i = 0; i < data.length && i < 3; i++) {
                     data[i].postId = currentId;
                     currentId++;
@@ -30,7 +31,9 @@ class HomeController {
                 showPopup('error', "Error loading posts!");
             }
         );
+        
     }
+    
 
     showUserPage() {
         let _that = this;

@@ -12,7 +12,6 @@ class ImageController {
         this._requester.get(imageBaseUrl,
             function success(data) {
                 _that._imageView.showImagesPage(data);
-                
             },
             
             function error(data) {

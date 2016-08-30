@@ -9,7 +9,6 @@ class HomeView {
         $.get('templates/nav-guest.html',function (template) {
             let navSelector = Mustache.render(template,null);
             $(_that._selector).html(navSelector);
-
             $.get('templates/welcome-guest.html', function (template) {
                 let renderMainContent = Mustache.render(template, null);
                 $(_that._mainContentSelector).html(renderMainContent);
@@ -19,12 +18,12 @@ class HomeView {
                     };
                     let renderedArticles = Mustache.render(template, articles);
                     $('.articles').html(renderedArticles);
+                    $(".links").hide();
                 });
             });
         })
-
     }
-
+    
     showUserPage(mainData) {
         let _that = this;
 
@@ -44,7 +43,6 @@ class HomeView {
                 });
             });
         })
-
     }
     
     showVideoPage() {

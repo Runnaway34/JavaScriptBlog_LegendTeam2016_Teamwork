@@ -4,22 +4,23 @@
         <ul class="title-author">
             <li class="single-element-form">
                 <h1 class="title-form">Article Title:</h1>
-                <input type="text" value="" placeholder="Title" id="title"/>
+                <input type="text" placeholder="Title" id="title"/>
             </li>
             <li class="single-element-form">
                 <h1 class="title-form">Author:</h1>
-                <input type="text" value="" placeholder="Author" id="author" disabled>
+                <input type="text"  placeholder="Author" id="author" disabled>
             </li>
         </ul>
         <h1 id="title-form">Content:</h1>
         <textarea class="content-field" placeholder="Content" id="content"></textarea>
-        <br />
-
-        <!--<label for="tag">Choose a tag</label>-->
-        <!--<select id="tag">-->
-            <!--<option value="Sport">Sport</option>-->
-            <!--<option value="Programming">Programming</option>-->
-        <!--</select>-->
+        <br/>
+        <label>
+            <span style="margin-left: 50px;">Choose a tag</span>
+            <select id="tag">
+                <option id="sport-option" value="Sport">Sport</option>
+                <option id="programming-option" value="Programming">Programming</option>
+            </select>
+        </label>
         <button type="button" id="create-new-article-request-button">Create Article</button>
     </form>
 </div>

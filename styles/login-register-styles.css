@@ -29,6 +29,13 @@
     margin-top: 30px;
     margin-bottom: 15px;
 }
+#title,#article-title,#commentAuthor {
+    margin-left: 80px;
+}
+#author,#article-author {
+    margin-left: 50px;
+}
+
 #content{
     background-color: white;
 }

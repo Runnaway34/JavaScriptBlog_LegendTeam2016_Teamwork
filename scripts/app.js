@@ -87,6 +87,10 @@ $(function () {
         sessionStorage.setItem('id', this.params['id']);
         articleController.getArticle();
     });
+
+    onRoute('#/tag', function () {
+        articleController.sortArticleByTag();
+    });
     
     onRoute("#/edit/article/", function (data) {
         let articleId  = data.params.id;
