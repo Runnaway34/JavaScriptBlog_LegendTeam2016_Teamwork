@@ -88,8 +88,10 @@ $(function () {
         articleController.getArticle();
     });
 
-    onRoute('#/tag', function () {
-        articleController.sortArticleByTag();
+    onRoute('#/tag/', function (data) {
+        let tagName = data.params.tag;
+        articleController.sortArticleByTag(tagName);
+
     });
     
     onRoute("#/edit/article/", function (data) {

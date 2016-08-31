@@ -19,6 +19,7 @@ class HomeView {
                     let renderedArticles = Mustache.render(template, articles);
                     $('.articles').html(renderedArticles);
                     $(".links").hide();
+                    
                 });
             });
         })

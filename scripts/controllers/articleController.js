@@ -30,12 +30,11 @@ class ArticleController {
             });
     }
 
-    sortArticleByTag() {
+    sortArticleByTag(tagName) {
         let _that = this;
         let articleByTag = [];
         let requestUrl = this._baseServiceUrl;
-        let sportTag = "Sport";
-        let programmingTag = "Programming";
+        let sportTag =tagName;
         this._requester.get(requestUrl,
             function success(data) {
 
@@ -50,6 +49,7 @@ class ArticleController {
                         articleByTag.push(data[i]);
                     }
                 }
+
                 _that._articleView.showSortedArticle(articleByTag);
             },
             function error(data) {

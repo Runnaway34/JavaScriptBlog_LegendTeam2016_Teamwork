@@ -4,7 +4,8 @@
         <h3 class="article-title"><a href="#/article/{{_id}}" class="links-header">{{title}}</a></h3>
         <p class="subtitle">Posted on {{date}} by {{author}}</p>
         <p class="article-content">{{content}}</p>
-        <p class="tag"><a href="#/tag" class="links">{{tag}}</a></p>
+        <a href="#/tag/?tag={{tag}}" class="links">{{tag}}</a>
+        <br>
         <a href="#/create/comment/{{_id}}" class="links">Add Comment</a>
         <a href="#/edit/article/?id={{_id}}" class="links">Edit Article</a>
         <a href="#/delete/article/?id={{_id}}" class="links">Delete Article</a>
