@@ -85,32 +85,18 @@ class ArticleView {
             var renderMainContent = Mustache.render(template, null);
             $(_that._mainContentSelector).html(renderMainContent);
             $('#article-author').val(sessionStorage.getItem('fullname'));
-
-
-
-            // let title =  document.getElementById('article-title').value;
-            // let content = document.getElementById('article-content').innerText ;
-            //
-            
-            let title = $('#article-content').text(data.content);
-            let content = $('#article-title').val(data.title);
+            document.getElementById('article-content').value = data.content;
+            document.getElementById('article-title').value = data.title;
             let articleId = data._id;
 
-            console.debug(title);
-            console.debug(content);
             $('#edit-article-request-button').on('click', function (ev) {
 
-                let newTitle = title;
-                let newContent = content;
-
-                console.debug(newTitle);
-                console.debug(newContent);
                 let authorName = sessionStorage.getItem("fullname");
                 let date = moment().format("MMMM Do YYYY,h:mm A");
                 let data = {
-                    "title": newTitle,
+                    "title":  document.getElementById('article-title').value,
                     "author": authorName,
-                    "content": newContent,
+                    "content": document.getElementById('article-content').value,
                     "date": date,
                     "_id": articleId
                 };

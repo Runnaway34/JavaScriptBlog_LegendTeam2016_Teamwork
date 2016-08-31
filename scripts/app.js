@@ -95,15 +95,10 @@ $(function () {
 
     });
     
-    onRoute("#/edit/article/", function (data) {
-        let articleId  = data.params.id;
-        articleController.editArticlePage(articleId);
+    onRoute("#/edit/article/", function (articleId) {
+        articleController.editArticlePage(articleId.params.id);
     });
-
-    onRoute("#/edit/article/", function (data) {
-        let articleId  = data.params.id;
-        articleController.showEditArticlePage(data);
-    });
+    
     onRoute('#/delete/article/', function (articleId) {
         articleController.deleteArticle(articleId.params.id);
     });
@@ -143,8 +138,5 @@ $(function () {
     bindEventHandler('editArticle', function (event, data) {
         articleController.editArticle(data);
     });
-    // bindEventHandler('viewArticle', function (event, data) {
-    //     articleController.editArticlePage(data);
-    // });
     run('#/home');
 });
