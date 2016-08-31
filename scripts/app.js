@@ -21,6 +21,7 @@ $(function () {
     let commentController = new CommentController(commentView, requester, baseUrl, appKey);
     
     let articleView = new ArticleView(selector,mainContentSelector);
+    
     let articleController = new ArticleController(articleView, requester, baseUrl, appKey);
   
     let imageView = new ImageView(selector,mainContentSelector);
@@ -96,9 +97,13 @@ $(function () {
     
     onRoute("#/edit/article/", function (data) {
         let articleId  = data.params.id;
-        articleController.showEditArticlePage(articleId);
+        articleController.editArticlePage(articleId);
     });
 
+    onRoute("#/edit/article/", function (data) {
+        let articleId  = data.params.id;
+        articleController.showEditArticlePage(data);
+    });
     onRoute('#/delete/article/', function (articleId) {
         articleController.deleteArticle(articleId.params.id);
     });
@@ -138,5 +143,8 @@ $(function () {
     bindEventHandler('editArticle', function (event, data) {
         articleController.editArticle(data);
     });
+    // bindEventHandler('viewArticle', function (event, data) {
+    //     articleController.editArticlePage(data);
+    // });
     run('#/home');
 });

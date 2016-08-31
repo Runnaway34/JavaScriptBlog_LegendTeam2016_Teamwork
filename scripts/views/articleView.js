@@ -61,7 +61,8 @@ class ArticleView {
         });
     }
 
-    showEditArticlePage(articleId) {
+    showEditArticlePage(data) {
+
         let _that = this;
         let templateUrl;
         let authToken = sessionStorage['_authToken'];
@@ -84,15 +85,32 @@ class ArticleView {
             var renderMainContent = Mustache.render(template, null);
             $(_that._mainContentSelector).html(renderMainContent);
             $('#article-author').val(sessionStorage.getItem('fullname'));
+
+
+
+            // let title =  document.getElementById('article-title').value;
+            // let content = document.getElementById('article-content').innerText ;
+            //
+            
+            let title = $('#article-content').text(data.content);
+            let content = $('#article-title').val(data.title);
+            let articleId = data._id;
+
+            console.debug(title);
+            console.debug(content);
             $('#edit-article-request-button').on('click', function (ev) {
-                let title = $('#article-title').val();
-                let content = $('#article-content').val();
+
+                let newTitle = title;
+                let newContent = content;
+
+                console.debug(newTitle);
+                console.debug(newContent);
                 let authorName = sessionStorage.getItem("fullname");
                 let date = moment().format("MMMM Do YYYY,h:mm A");
                 let data = {
-                    "title": title,
+                    "title": newTitle,
                     "author": authorName,
-                    "content": content,
+                    "content": newContent,
                     "date": date,
                     "_id": articleId
                 };
@@ -102,37 +120,3 @@ class ArticleView {
     }
 
 }
-
-
-
-
-let likes = 0, dislikes = 0;
-
-//Functions to increase likes and immediately calculate bar widths
-function like() {
-    likes++;
-    calculateBar();
-}
-function dislike() {
-    dislikes++;
-    calculateBar();
-}
-
-//Calculates bar widths
-function calculateBar() {
-    var total = likes + dislikes;
-    //Simple math to calculate percentages
-    var percentageLikes = (likes / total) * 100;
-    var percentageDislikes = (dislikes / total) * 100;
-
-    //We need to apply the widths to our elements
-    document.getElementById('likes').style.width = percentageLikes.toString() + "%";
-    document.getElementById('dislikes').style.width = percentageDislikes.toString() + "%";
-
-    //We add the numbers on the buttons, just to show how to
-    document.getElementById('likeButton').value = "Like (" + likes.toString() + ")";
-    document.getElementById('dislikeButton').value = "Disike (" + dislikes.toString() + ")";
-
-}
-
-

@@ -1,7 +1,8 @@
 {{#articleContent}}
 <li class="single-article">
     <article id="post">
-        <h3 class="article-title"><a href="#/article/{{_id}}" class="links-header">{{title}}</a></h3>
+        <!--<h3 class="article-title"><a href="#/article/{{_id}}" class="links-header">{{title}}</a></h3>-->
+        <h3 class="article-title">{{title}}</h3>
         <p class="subtitle">Posted on {{date}} by {{author}}</p>
         <p class="article-content">{{content}}</p>
         <a href="#/tag/?tag={{tag}}" class="links">{{tag}}</a>
@@ -9,14 +10,6 @@
         <a href="#/create/comment/{{_id}}" class="links">Add Comment</a>
         <a href="#/edit/article/?id={{_id}}" class="links">Edit Article</a>
         <a href="#/delete/article/?id={{_id}}" class="links">Delete Article</a>
-
-        <br/>
-        <div id="bar">
-            <div id="likes"></div>
-            <div id="dislikes"></div>
-        </div>
-        <input type="button" value="Like" id="likeButton" onclick="like();" />
-        <input type="button" value="Dislike" id="dislikeButton" onclick="dislike();" />
     </article>
     <br>
 </li>

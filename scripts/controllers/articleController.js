@@ -71,12 +71,23 @@ class ArticleController {
             });
     }
 
-    showSelectedArticle(data) {
-        this._articleView.showSelectedArticle(data);
+    showSelectedArticle(article) {
+        
+        this._articleView.showSelectedArticle(article);
     }
 
-    showEditArticlePage(data, isLoggedIn) {
-        this._articleView.showEditArticlePage(data, isLoggedIn);
+    editArticlePage(data) {
+        let requestUrl = this._baseServiceUrl + data;
+        let _that = this;
+        this._requester.get(requestUrl,
+            function success(data) {
+                showPopup('success', "Success loading this article!");
+                _that._articleView.showEditArticlePage(data);
+            },
+            function error() {
+                showPopup('error', "Error loading this article!");
+            });
+      
     }
 
     editArticle(requestData) {
@@ -104,7 +115,7 @@ class ArticleController {
 
         this._requester.put(requestUrl, request,
             function success(response) {
-                showPopup("success", "You have successfully deleted this article");
+                showPopup("success", "You have successfully edited this article");
                 redirectUrl("#/home")
             },
             function error(response) {
