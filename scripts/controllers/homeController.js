@@ -27,7 +27,7 @@ class HomeController {
                 }
                 _that._homeView.showGuestPage(recentPosts, data);
             },
-            function error(data) {
+            function error() {
                 showPopup('error', "Error loading posts!");
             }
         );

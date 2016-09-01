@@ -90,7 +90,7 @@ class ArticleView {
             let articleId = data._id;
 
             $('#edit-article-request-button').on('click', function (ev) {
-
+                let tag = $('#tag').val();
                 let authorName = sessionStorage.getItem("fullname");
                 let date = moment().format("MMMM Do YYYY,h:mm A");
                 let data = {
@@ -98,7 +98,8 @@ class ArticleView {
                     "author": authorName,
                     "content": document.getElementById('article-content').value,
                     "date": date,
-                    "_id": articleId
+                    "_id": articleId,
+                    "tag": tag
                 };
                 triggerEvent('editArticle', data);
             })

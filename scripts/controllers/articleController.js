@@ -21,11 +21,11 @@ class ArticleController {
 
         let requestUrl = this._baseServiceUrl;
         this._requester.post(requestUrl, requestData,
-            function success(data) {
+            function success() {
                 showPopup('success', "You have successfully created a new article.");
                 redirectUrl("#/home");
             },
-            function error(data) {
+            function error() {
                 showPopup('error', "An error has occurred while attempting to create a new article");
             });
     }
@@ -34,7 +34,7 @@ class ArticleController {
         let _that = this;
         let articleByTag = [];
         let requestUrl = this._baseServiceUrl;
-        let sportTag =tagName;
+        let sportTag = tagName;
         this._requester.get(requestUrl,
             function success(data) {
 
@@ -52,7 +52,7 @@ class ArticleController {
 
                 _that._articleView.showSortedArticle(articleByTag);
             },
-            function error(data) {
+            function error() {
                 showPopup('error', "Error loading posts!");
             }
         );
@@ -66,7 +66,7 @@ class ArticleController {
             function success(selectedArticle) {
                 triggerEvent('loadComments', selectedArticle);
             },
-            function error(data) {
+            function error() {
                 showPopup('error', "Error loading this article!");
             });
     }
@@ -87,7 +87,6 @@ class ArticleController {
             function error() {
                 showPopup('error', "Error loading this article!");
             });
-      
     }
 
     editArticle(requestData) {
@@ -105,20 +104,21 @@ class ArticleController {
         let articleText = requestData.content;
         let articleAuthor = requestData.author;
         let date = requestData.date;
+        let tagName = requestData.tag;
 
         let request = {
             title: articleTitle,
             content: articleText,
             author: articleAuthor,
-            date: date
+            date: date,
+            tag:tagName
         };
-
         this._requester.put(requestUrl, request,
-            function success(response) {
+            function success() {
                 showPopup("success", "You have successfully edited this article");
                 redirectUrl("#/home")
             },
-            function error(response) {
+            function error() {
                 showPopup("error", "You don't have authorization to edit this article");
             });
     }
