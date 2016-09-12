@@ -4,7 +4,7 @@ class ArticleView {
         this._mainContentSelector = mainContentSelector;
     }
 
-    showCreateArticlePage(data) {
+    showCreateArticlePage(data) { // Create Article template
         let _that = this;
         let templateUrl = "templates/nav-create-article.html";
 
@@ -38,7 +38,7 @@ class ArticleView {
         });
     }
 
-    showSortedArticle(data) {
+    showSortedArticle(data) {//Sorts articles By Tag Name
         let _that = this;
         let theData = {
             sortedArticles: data
@@ -49,7 +49,7 @@ class ArticleView {
         });
     }
 
-    showSelectedArticle(article) {
+    showSelectedArticle(article) { //Show the article which we want to see (incl. all comments)
         let _that = this;
         let theData = {
             selectedArticle: article,
@@ -61,8 +61,7 @@ class ArticleView {
         });
     }
 
-    showEditArticlePage(data) {
-
+    showEditArticlePage(data) {//Show the article which we want to edit 
         let _that = this;
         let templateUrl;
         let authToken = sessionStorage['_authToken'];
@@ -78,8 +77,6 @@ class ArticleView {
             let navSelector = Mustache.render(template, null);
             $(_that._selector).html(navSelector);
         });
-
-
         $.get('templates/form-edit-article.html', function (template) {
 
             var renderMainContent = Mustache.render(template, null);

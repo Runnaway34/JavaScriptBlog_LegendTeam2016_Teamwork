@@ -5,7 +5,7 @@ class AudioController {
         this._appKey = appKey;
         this._baseServiceUrl = baseUrl + "/appdata/" + appKey + "/audio/";
     }
-    showAudioPage() {
+    showAudioPage() { //show the audio page
         let _that = this;
         let audioBaseUrl = this._baseServiceUrl;
         this._requester.get(audioBaseUrl,

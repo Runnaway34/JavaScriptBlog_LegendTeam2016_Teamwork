@@ -6,7 +6,7 @@ class HomeController {
         this._appKey = appKey;
     }
 
-    showGuestPage() {
+    showGuestPage() { //Show only first three Article sorted by Date
         
         let _that = this;
         let recentPosts = [];
@@ -35,7 +35,7 @@ class HomeController {
     }
     
 
-    showUserPage() {
+    showUserPage() { // show the user view with all Articles
         let _that = this;
         let requestUrl = this._baseServiceUrl + "/appdata/" + this._appKey + "/articles";
 

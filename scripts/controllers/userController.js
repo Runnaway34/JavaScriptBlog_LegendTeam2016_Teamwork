@@ -14,11 +14,10 @@ class UserController {
         this._userView.showRegisterPage(isLoggedIn);
     }
 
-    login(requestData) {
+    login(requestData) { //Login the new user
         let requestUrl = this._baseServiceUrl + "login";
         this._requester.post(requestUrl, requestData,
             function success(data) {
-
                 sessionStorage['_authToken'] = data._kmd.authtoken;
                 sessionStorage['username'] = data.username;
                 sessionStorage['fullname'] = data.fullname;
@@ -27,11 +26,10 @@ class UserController {
             },
             function error(data) {
                 showPopup('error', "An error has occurred while attempting to log in.");
-
             });
     }
 
-    register(requestData) {
+    register(requestData) { //register new user
         if ((requestData.username.length < 5) ) {
             showPopup('error', "Username must consist of at least 5 characters.");
             return;
@@ -51,6 +49,7 @@ class UserController {
             showPopup('error', "Passwords do not match.");
             return;
         }
+
         let requestUrl = this._baseServiceUrl;
         delete requestData['confirmPassword'];
         this._requester.post(requestUrl, requestData, function success(data) {
@@ -58,7 +57,7 @@ class UserController {
 
                 redirectUrl("#/login");
             },
-            function error(data) {
+            function error() {
                 showPopup('error', "Username is already taken. Please try another");
 
             });

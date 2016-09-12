@@ -9,7 +9,7 @@ class ArticleController {
     showCreateArticlePage(data, isLoggedIn) {
         this._articleView.showCreateArticlePage(data, isLoggedIn);
     }
-    createArticle(requestData) {
+    createArticle(requestData) { // Create the new article
         if (requestData.title.length < 10) {
             showPopup('error', "Article title must consist of at least 10 symbols.");
             return;
@@ -30,7 +30,7 @@ class ArticleController {
             });
     }
 
-    sortArticleByTag(tagName) {
+    sortArticleByTag(tagName) { //Sort The article by Tag Name
         let _that = this;
         let articleByTag = [];
         let requestUrl = this._baseServiceUrl;
@@ -76,12 +76,12 @@ class ArticleController {
         this._articleView.showSelectedArticle(article);
     }
 
-    editArticlePage(data) {
+    editArticlePage(data) { // Download (get) the article from Kinvey
         let requestUrl = this._baseServiceUrl + data;
         let _that = this;
         this._requester.get(requestUrl,
             function success(data) {
-                showPopup('success', "Success loading this article!");
+                showPopup('success', "You have successfully loaded the selected article!");
                 _that._articleView.showEditArticlePage(data);
             },
             function error() {
@@ -89,7 +89,7 @@ class ArticleController {
             });
     }
 
-    editArticle(requestData) {
+    editArticle(requestData) { //Upload (put) the Article in Kinvey
         if (requestData.title.length < 10) {
             showPopup('error', "Article title must consist of at least 10 symbols.");
             return;
@@ -123,7 +123,7 @@ class ArticleController {
             });
     }
 
-    deleteArticle(articleId) {
+    deleteArticle(articleId) { //Delete the selected article row in Kinvey
 
         let requestUrl = this._baseServiceUrl + articleId;
 

@@ -4,7 +4,7 @@ class UserView {
         this._mainContentSelector = mainContentSelector;
     }
     
-    showLoginPage(isLoggedIn) {
+    showLoginPage() {
         let _that = this;
         let templateUrl= "templates/nav-guest.html";
 
@@ -30,7 +30,7 @@ class UserView {
         });
     }
     
-    showRegisterPage(isLoggedIn) {
+    showRegisterPage() {
         let _that = this;
         let templateUrl= "templates/nav-guest.html";
         $.get(templateUrl, function (template) {

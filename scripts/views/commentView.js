@@ -6,17 +6,13 @@ class CommentView {
 
     showCreateCommentPage(isLoggedIn) {
         let _that = this;
-
         let templateUrl = '';
-
         if (isLoggedIn) {
             templateUrl = "templates/nav-user.html";
         }
-
         else {
             templateUrl = "templates/nav-guest.html"
         }
-
         $.get(templateUrl, function (template) {
             let navSelector = Mustache.render(template, null);
             $(_that._selector).html(navSelector);
@@ -29,12 +25,10 @@ class CommentView {
             $('#commentAuthor').val(sessionStorage.getItem('fullname'));
 
             $('#create-new-comment-request-button').on('click', function (ev) {
-
                 if (isLoggedIn != true) {
                     showPopup('error', "Please log in to be able to comment articles");
                     redirectUrl("#/login");
                 }
-
                 else {
                     let commentAuthor = $('#commentAuthor').val();
                     let commentContent = $('#commentContent').val();

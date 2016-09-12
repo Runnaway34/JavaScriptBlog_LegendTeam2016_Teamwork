@@ -10,7 +10,7 @@ class CommentController {
         this._commentView.showCreateCommentPage(isLoggedIn);
     }
 
-    createComment(requestData) {
+    createComment(requestData) { //Create new comment to the selected article
         if (requestData.content.length < 5) {
             showPopup('error', "Comment must consist at least 10 characters.");
             return;
@@ -27,7 +27,7 @@ class CommentController {
             });
     }
 
-    loadComments(requestData) {
+    loadComments(requestData) { //Load comments using article Id from Kinvey
         
         this._requester.get(this._baseServiceUrl,
             function success(data) {
